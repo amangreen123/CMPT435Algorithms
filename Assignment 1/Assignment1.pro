@@ -7,7 +7,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 SOURCES += \
     List.cpp \
-    Stack.cpp
+    Stack.cpp \
+    main.cpp \
+    queue.cpp
 
 HEADERS += \
     List.h \
