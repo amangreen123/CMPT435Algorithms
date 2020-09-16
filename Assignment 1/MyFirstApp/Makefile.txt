@@ -1,4 +1,0 @@
-all: main.o
-        g++ -o MyFirstApp.o
-main.o: MyFirstApp.cpp
-        g++ -c MyFirstApp.cpp
