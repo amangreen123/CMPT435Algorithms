@@ -1,28 +1,27 @@
 #pragma once
 #include <string>
-
 using namespace std;
 
 
 class Stack { //constructor
 private:
-	struct Mitem
-	{
-		string name;
-		char arrname;
-		Mitem* lastItem;
-	};
 
-	Mitem* stackPt;
+    struct Node {
+        Node* head;
+        char item;
+        Node* tail;
+    }*stackPt;
+
+
+
 
 public:
-	void Push(string name,int arrname);
-	void Pop();
-	void ReadItem(Mitem);
-	void PrintStack();
+    void Push(char items);
+    void Pop();
+    void ReadItem(Node* readitem);
+    void PrintStack();
 
-	Stack();
-	~Stack();
-
+    Stack();
+    ~Stack();
 
 };

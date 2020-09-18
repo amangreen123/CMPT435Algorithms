@@ -5,75 +5,69 @@
 #include <cstdlib>
 using namespace std;
 
-class Queue
-{
-    int* arr;
-        int MAX;
-        int front;
-        int rear;
-        int count;
-public:
-        Queue(int size);
-            ~Queue();
-            void dequene();
-            void enquene(int x);
-            int size();
-            int peek();
-            bool empty();
-            bool full();
 
+class Queue {
+
+    struct Node {
+
+        Node* head;
+        char item;
+        Node* tail;
+    };
+
+    Node* front = NULL;
+    Node* rear = NULL;	//*headNode = NULL,*nextNode = NULL;
+
+
+public:
+    bool empty();
+    void dequene();
+    void enquene(char x);
 };
 
-Queue::Queue(int size) {
-    arr = new int[size];
-    MAX = size;
-    front = 0;
-    rear = -1;
-    count = 0;
-}
 
-Queue::~Queue() {
-    delete[] arr;
-}
-
-void Queue::dequene() {
-    if (empty()) {
-        cout << "Queue is empty";
-        exit(EXIT_FAILURE);
-    }
-    cout << "Removing" << arr[front] << '\n';
-    front = (front + 1) % MAX;
-    count--;
-}
-
-void Queue::enquene(int item)
+bool Queue::empty()
 {
-    if (full()) {
-        cout << "Stack is Full\n";
-        rear = (rear + 1) % MAX;
-        arr[rear] = item;
-        count++;
+    Node* headNode = new Node();
+    Node* nextNode = new Node();
+    if (headNode == NULL && nextNode == NULL) {
+        return true;
+    }
+    else{
+        return false;
     }
 }
 
-int Queue::peek() {
+
+//removes element
+void Queue::dequene() {
+    Node* headNode = new Node();
+    Node* nextNode = new Node();
+
+
     if (empty()) {
-        cout << "Queue is empty\n";
-        exit(EXIT_FAILURE);
+        if (front == rear)
+        {
+            free(front);
+            front = rear = NULL;
+        }
+        else
+        {
+            Node* ptr = front;
+            front = front->head;
+            free(ptr);
+        }
     }
-    return arr[front];
 }
 
-int Queue::size() {
-    return count;
-}
+//inserts element
+void Queue::enquene(char items) {
+    Node* headNode = new Node();
+    Node* nextNode = new Node();
 
-bool Queue::empty() {
-    return (size() == 0);
-}
+    headNode->item;
+    headNode->tail = nextNode;
+    nextNode->head = headNode;
+    nextNode->item;
 
-bool Queue::full() {
-    return (size() == MAX);
 }
-
-#endif // QUEUE_H

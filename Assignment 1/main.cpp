@@ -1,57 +1,45 @@
 #include <cstdlib>
-#include "List.h"
 #include "Queue.h"
 #include "Stack.h"
 #include<fstream>
 using namespace std;
 
 int main(int argc, char** argv) {
-	
-	ifstream letterFile("magicitems.txt");
+#include <cstdlib>
+#include<fstream>
+#include<iostream>
+#include <string>
+#include <vector>
+#include "Stack.h"
+#include "Queue.h"
 
-	List MagicItems;
+using namespace std;
 
-	MagicItems.AddNode("a");
-	MagicItems.AddNode("b");
-	MagicItems.AddNode("c");
-	MagicItems.PrintList();
-
-	MagicItems.RemoveNode("d");
-	MagicItems.PrintList();
+int main(int argc, char** argv) {
 
     Stack stack;
-        stack.Push("a", 1);
-        stack.Push("b", 2);
-        stack.Push("c", 3);
-        stack.PrintStack();
-        cout << "pop\n";
-        stack.Pop();
-        cout << "pop\n";
-        stack.Pop();
-        cout << "pop\n";
-        stack.Pop();
-        cout << "pop\n";
-        stack.Pop();
-        cout << "pop\n";
-        stack.Pop();
+    Stack MagicItems;
+    ifstream letterFile;
+    string text;
+    vector<string> words;
+    int count = 0;
 
-    Queue q(5);
-        q.enquene(1);
-        q.enquene(2);
-        q.enquene(3);
-        cout << "Queue size is" << q.size() << endl;
-        q.dequene();
-        q.dequene();
-        q.dequene();
+    letterFile.open("magicitems.txt", ios::in);
 
-        if (q.empty())
-            cout << "Queue is Empty\n";
-        else
-            cout << "Queue is not Empty\n";
+    if (!letterFile) {
+        cout << "\n Error opening file";
+        exit(0);
+    }
+
+    if (letterFile.is_open()) {
+        while (std::getline(letterFile, text, ' ')) {
+            words.push_back(text);
+            cout << text << "\n";
+        }
+
+        letterFile.close();
+    }
+}
 
 
-
-        return 0;
-
-	return 0;
 }
