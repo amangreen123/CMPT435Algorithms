@@ -1,73 +1,58 @@
-#ifndef QUEUE_H
-#define QUEUE_H
-
 #include <iostream>
 #include <cstdlib>
+
+
 using namespace std;
 
 
 class Queue {
 
-    struct Node {
+    typedef struct Node {
 
         Node* head;
         char item;
         Node* tail;
-    };
+    }* queuePt;
 
-    Node* front = NULL;
-    Node* rear = NULL;	//*headNode = NULL,*nextNode = NULL;
 
 
 public:
-    bool empty();
+    Queue();
     void dequene();
-    void enquene(char x);
+    void enquene(char c);
 };
 
-
-bool Queue::empty()
+Queue::Queue()// constructor when adding new stack
 {
-    Node* headNode = new Node();
-    Node* nextNode = new Node();
-    if (headNode == NULL && nextNode == NULL) {
-        return true;
-    }
-    else{
-        return false;
-    }
+    queuePt = NULL;
+
+}
+
+//pushes
+void Queue::enquene(char charc) {
+
+    Node* qu = new Node;
+    Node* queuePt = queuePt->tail;
+    qu->tail = NULL;
+    queuePt->head = qu;
+    qu->item = charc;
+    queuePt = qu;
 }
 
 
-//removes element
+//removes
 void Queue::dequene() {
-    Node* headNode = new Node();
-    Node* nextNode = new Node();
+    Node* qut = new Node;
 
-
-    if (empty()) {
-        if (front == rear)
-        {
-            free(front);
-            front = rear = NULL;
-        }
-        else
-        {
-            Node* ptr = front;
-            front = front->head;
-            free(ptr);
-        }
+    if (queuePt != nullptr && queuePt->tail != nullptr) {
+        Node* tem = queuePt;
+        tem = tem->tail;
+        tem -> tail = nullptr;
+        queuePt -> tail = NULL;
+        delete tem;
     }
-}
-
-//inserts element
-void Queue::enquene(char items) {
-    Node* headNode = new Node();
-    Node* nextNode = new Node();
-
-    headNode->item;
-    headNode->tail = nextNode;
-    nextNode->head = headNode;
-    nextNode->item;
 
 }
+
+
+

@@ -18,10 +18,4 @@ private:
 public:
     void Push(char items);
     void Pop();
-    void ReadItem(Node* readitem);
-    void PrintStack();
-
-    Stack();
-    ~Stack();
-
 };

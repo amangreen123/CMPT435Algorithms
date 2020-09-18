@@ -1,11 +1,4 @@
-#include <cstdlib>
-#include "Queue.h"
-#include "Stack.h"
-#include<fstream>
-using namespace std;
-
-int main(int argc, char** argv) {
-#include <cstdlib>
+include <cstdlib>
 #include<fstream>
 #include<iostream>
 #include <string>
@@ -18,7 +11,7 @@ using namespace std;
 int main(int argc, char** argv) {
 
     Stack stack;
-    Stack MagicItems;
+    Queue queue;
     ifstream letterFile;
     string text;
     vector<string> words;
@@ -39,7 +32,28 @@ int main(int argc, char** argv) {
 
         letterFile.close();
     }
+
+
+    for (int i = 0; i < words.size(); i++) {
+        for (int j = 0; j < words[i].length();j++) {
+            stack.Push(words[i].at(j));
+            queue.enquene(words[i].at(j));
+        }
+    }
 }
+
+bool compareList(Stack *s, Queue *q) {
+
+    while (q != nullptr && s != nullptr) {
+        if (s-> p == q->c) {
+            q.dequene();
+            s.Pop();
+        }
+        else {
+            return false;
+        }
+    }
+    return true;
 
 
 }
