@@ -46,8 +46,8 @@ bool compareList(Stack *s, Queue *q) {
 
     while (q != nullptr && s != nullptr) {
         if (s-> p == q->c) {
-            q.dequene();
-            s.Pop();
+            q->dequene();
+            s->Pop();
         }
         else {
             return false;
