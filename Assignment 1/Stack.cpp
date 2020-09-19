@@ -49,16 +49,17 @@ char Stack::Pop() {
     //		delete(temp);
     //}
     Node* n = new Node;
-    if(stackPt != nullptr && stackPt->tail != nullptr){
-    Node* temp = stackPt;
-    stackPt = stackPt-> tail;
-    stackPt->head = nullptr;
-    delete temp;
-
+    if (stackPt != nullptr && stackPt->tail != nullptr) {
+        Node* temp = stackPt;
+        stackPt = stackPt->tail;
+        stackPt->head = nullptr;
+        delete temp;
+    }
 }
 
-    bool emptyStack() {
-
+    bool Stack::emptyStack() {
+        if (stackPt == NULL);
+        return stackPt = new Node;
     }
 
 
