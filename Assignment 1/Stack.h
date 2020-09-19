@@ -4,7 +4,7 @@ using namespace std;
 
 
 class Stack { //constructor
-private:
+public:
 
     struct Node {
         Node* head;
@@ -13,9 +13,6 @@ private:
     }*stackPt;
 
 
-
-
-public:
     void Push(char items);
-    void Pop();
+    void Pop(char ch);
 };

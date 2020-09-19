@@ -10,7 +10,7 @@ Stack::Stack()// constructor when adding new stack
 }
 
 
-void Stack::Push(char charac) {
+void Stack::Push(char push) {
     if (stackPt == NULL) {
         cout << "Nothing is on the Stack\n";
     }
@@ -20,14 +20,13 @@ void Stack::Push(char charac) {
         Node* tempNode = stackPt->tail;
         a->head = NULL;
         tempNode->head = a;
-        a->item = charac;
+        a->item = push;
         stackPt = a;
     }
 }
 
-void Stack::Pop() {
-    Node* n = new Node;
-
+void Stack::Pop(char chr) {
+    //Node* n = new Node;
     if(stackPt != nullptr && stackPt->tail != nullptr){
     Node* temp = stackPt;
     stackPt = stackPt-> tail;
@@ -35,3 +34,4 @@ void Stack::Pop() {
     delete temp;
     }
 }
+
