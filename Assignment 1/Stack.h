@@ -4,15 +4,17 @@ using namespace std;
 
 
 class Stack { //constructor
-public:
+private:
 
     struct Node {
         Node* head;
         char item;
         Node* tail;
-    }*stackPt;
+    };
+    Node *stackPt;
 
-
+public:
     void Push(char items);
-    void Pop(char ch);
+    char Pop();
+    bool emptyStack();
 };

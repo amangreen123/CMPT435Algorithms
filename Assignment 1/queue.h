@@ -1,58 +1,72 @@
-#include <iostream>
-#include <cstdlib>
-
+#include<cstdlib>
+#include<iostream>
+#include "Stack.h"
 
 using namespace std;
 
-
-class Queue {
-
-    typedef struct Node {
-
-        Node* head;
-        char item;
-        Node* tail;
-    }* queuePt;
-
-
-
-public:
-    Queue();
-    void dequene();
-    void enquene(char c);
-};
-
-Queue::Queue()// constructor when adding new stack
+Stack::Stack()// constructor when adding new stack
 {
-    queuePt = NULL;
-
-}
-
-//pushes
-void Queue::enquene(char charc) {
-
-    Node* qu = new Node;
-    Node* queuePt = queuePt->tail;
-    qu->tail = NULL;
-    queuePt->head = qu;
-    qu->item = charc;
-    queuePt = qu;
+    stackPt = NULL;
 }
 
 
-//removes
-void Queue::dequene() {
-    Node* qut = new Node;
+void Stack::Push(char character) {
+    Node* temp;
+    temp = new Node;
+    temp->item = character;
+    if (stackPt == NULL)
+    {
+        temp->tail = NULL;
+    }
+    else
+    {
+        temp->tail = stackPt;
+    }
+    stackPt = temp;
 
-    if (queuePt != nullptr && queuePt->tail != nullptr) {
-        Node* tem = queuePt;
-        tem = tem->tail;
-        tem -> tail = nullptr;
-        queuePt -> tail = NULL;
-        delete tem;
+    //if (stackPt == NULL) {
+    //	cout << "Nothing is on the Stack\n";
+    //}
+    //else
+    //{
+    //	Node* a = (Node*)(stackPt);
+    //	Node* tempNode = (Node*)(stackPt)->tail;
+    //	a->head = NULL;
+    //	tempNode->head = a;
+    //	a->item = character;
+    //	a->head = NULL;
+        //stackPt = a;
+    //}
+}
+
+char Stack::Pop() {
+    //if (stackPt == NULL)
+    //	cout << "underflow";
+    //else
+//	{
+    //	Node* temp = stackPt;
+    //	stackPt = stackPt->tail;
+    //		delete(temp);
+    //}
+    Node* n = new Node;
+    if(stackPt != nullptr && stackPt->tail != nullptr){
+    Node* temp = stackPt;
+    stackPt = stackPt-> tail;
+    stackPt->head = nullptr;
+    delete temp;
+
+}
+
+    bool emptyStack() {
+
     }
 
-}
 
+//Node* a = stackPt;
+//stackPt = stackPt->tail;
+//a->head = NULL;
+//stackPt->head = a;
+//a->item = charac;
+//a = stackPt;
 
 

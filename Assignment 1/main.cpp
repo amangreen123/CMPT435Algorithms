@@ -35,19 +35,23 @@ int main(int argc, char** argv) {
 
 
     for (int i = 0; i < words.size(); i++) {
-        for (int j = 0; j < words[i].length();j++) {
+        for (int j = 0; j < words[i].length(); j++) {
             stack.Push(words[i].at(j));
-            queue.enquene(words[i].at(j));
+            queue.enqueue(words[i].at(j));
         }
+        compareList(stack, queue);
+        //empty function or while loop to empty
     }
+    //figure out way to clear list after comaper
+
 }
+bool compareList(Stack& s, Queue &q) {
 
-bool compareList(Stack *s, Queue *q) {
+    while (q.emptyQueue() != true && s.emptyStack() != true) {
+        char stackChar = s.Pop();
+        char queueChar = q.dequeue();
 
-    while (q != nullptr && s != nullptr) {
-        if (s-> p == q->c) {
-            q.dequene();
-            s.Pop();
+        if (stackChar == queueChar) {
         }
         else {
             return false;
@@ -57,3 +61,4 @@ bool compareList(Stack *s, Queue *q) {
 
 
 }
+
