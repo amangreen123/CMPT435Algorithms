@@ -48,14 +48,19 @@ char Stack::Pop() {
     //	stackPt = stackPt->tail;
     //		delete(temp);
     //}
+    Node* temp;
     Node* n = new Node;
     if (stackPt != nullptr && stackPt->tail != nullptr) {
-        Node* temp = stackPt;
+        temp = stackPt;
         stackPt = stackPt->tail;
         stackPt->head = nullptr;
-        delete temp;
+ 
     }
+
+    char a = temp->item;
+  return a;
 }
+
 
     bool Stack::emptyStack() {
         if (stackPt == NULL);

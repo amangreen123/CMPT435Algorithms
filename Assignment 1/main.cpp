@@ -8,6 +8,25 @@
 
 using namespace std;
 
+
+bool compareList(Stack& s, Queue& q) {
+
+    while (q.emptyQueue() != true && s.emptyStack() != true) {
+        char stackChar = s.Pop();
+        char queueChar = q.dequeue();
+
+        if (stackChar == queueChar) {
+        }
+        else {
+            return false;
+        }
+    }
+    return true;
+
+
+}
+
+
 int main(int argc, char** argv) {
 
     Stack stack;
@@ -45,20 +64,5 @@ int main(int argc, char** argv) {
     //figure out way to clear list after comaper
 
 }
-bool compareList(Stack& s, Queue &q) {
 
-    while (q.emptyQueue() != true && s.emptyStack() != true) {
-        char stackChar = s.Pop();
-        char queueChar = q.dequeue();
-
-        if (stackChar == queueChar) {
-        }
-        else {
-            return false;
-        }
-    }
-    return true;
-
-
-}
 

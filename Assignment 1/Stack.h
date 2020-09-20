@@ -11,9 +11,11 @@ private:
         char item;
         Node* tail;
     };
-    Node *stackPt;
 
 public:
+    Node *stackPt;
+    
+    Stack();
     void Push(char items);
     char Pop();
     bool emptyStack();
