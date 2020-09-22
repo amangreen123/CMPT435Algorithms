@@ -8,23 +8,20 @@ using namespace std;
 
 class Queue {
 
-
 private:
+
     struct QNode {
-        QNode* head;
         char item;
         QNode* tail;
-
     };
-    QNode* queuePt;
+    QNode* queueHead;
 
 
 
 public:
     Queue();
     char dequeue();
-    void enqueue(char i);
-    bool emptyQueue();
+    void enqueue(const char item);
+    bool emptyQueue() const;
 };
-
 

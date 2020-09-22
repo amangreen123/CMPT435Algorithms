@@ -4,6 +4,7 @@ using namespace std;
 
 
 class Stack { //constructor
+    int numChar;//number of elements in struct
 private:
 
     struct Node {
@@ -11,12 +12,13 @@ private:
         char item;
         Node* tail;
     };
+Node* stackPt;
 
 public:
-    Node *stackPt;
-    
     Stack();
-    void Push(char items);
-    char Pop();
-    bool emptyStack();
+    void Push(const char item);
+    void Pop();
+    int stackSize() const;
+    bool emptyStack() const;
 };
+
