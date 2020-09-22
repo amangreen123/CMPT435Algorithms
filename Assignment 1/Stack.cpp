@@ -1,7 +1,10 @@
 #include<cstdlib>
 #include<iostream>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
+=======
+>>>>>>> f043b6262aa0378e76b2589a546c146fd5b63b77
 #include "Stack.h"
 
 =======
@@ -11,26 +14,69 @@
 >>>>>>> Stashed changes
 using namespace std;
 
-Stack::Stack()// constructor when ading new stack 
+Stack::Stack()// constructor when adding new stack
 {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 	stackPt = NULL;
+=======
+    stackPt = NULL;
+>>>>>>> f043b6262aa0378e76b2589a546c146fd5b63b77
 }
 
-Stack::~Stack()//deconstructor called when stack object gonnna be destroyed 
-{
-	Mitem* pt1;
-	Mitem* pt2;
 
-	pt1 = stackPt;
-	while (pt1 != NULL) {
-		pt2 = pt1;
-		pt1 = pt1->lastItem;
-		pt2->lastItem = NULL;
-		delete pt2;
-	}
+void Stack::Push(char character) {
+    Node* temp;
+    temp = new Node;
+    temp->item = character;
+    if (stackPt == NULL)
+    {
+        temp->tail = NULL;
+    }
+    else
+    {
+        temp->tail = stackPt;
+    }
+    stackPt = temp;
+
+    //if (stackPt == NULL) {
+    //	cout << "Nothing is on the Stack\n";
+    //}
+    //else
+    //{
+    //	Node* a = (Node*)(stackPt);
+    //	Node* tempNode = (Node*)(stackPt)->tail;
+    //	a->head = NULL;
+    //	tempNode->head = a;
+    //	a->item = character;
+    //	a->head = NULL;
+        //stackPt = a;
+    //}
 }
 
+char Stack::Pop() {
+    //if (stackPt == NULL)
+    //	cout << "underflow";
+    //else
+//	{
+    //	Node* temp = stackPt;
+    //	stackPt = stackPt->tail;
+    //		delete(temp);
+    //}
+    Node* temp;
+    Node* n = new Node;
+    if (stackPt != nullptr && stackPt->tail != nullptr) {
+        temp = stackPt;
+        stackPt = stackPt->tail;
+        stackPt->head = nullptr;
+ 
+    }
+
+    char a = temp->item;
+  return a;
+}
+
+<<<<<<< HEAD
 void Stack::Push(string name, int arrname) {
 	Mitem* n = new Mitem;
 
@@ -135,6 +181,14 @@ void Stack::Pop() {
      //   stackPt->head = nullptr;
    // }
 }
+=======
+
+    bool Stack::emptyStack() {
+        if (stackPt == NULL);
+        return stackPt = new Node;
+    }
+
+>>>>>>> f043b6262aa0378e76b2589a546c146fd5b63b77
 
 //Node* a = stackPt;
 //stackPt = stackPt->tail;
@@ -142,4 +196,7 @@ void Stack::Pop() {
 //stackPt->head = a;
 //a->item = charac;
 //a = stackPt;
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> f043b6262aa0378e76b2589a546c146fd5b63b77
