@@ -17,7 +17,7 @@ Node* stackPt;
 public:
     Stack();
     void Push(const char item);
-    void Pop();
+    char Pop();
     int stackSize() const;
     bool emptyStack() const;
 };
