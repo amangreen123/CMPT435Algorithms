@@ -5,6 +5,7 @@ using namespace std;
 
 
 class Stack { //constructor
+    int numChar;//number of elements in struct
 private:
 	struct Mitem
 	{
@@ -13,6 +14,7 @@ private:
 		Mitem* lastItem;
 	};
 
+<<<<<<< Updated upstream
 	Mitem* stackPt;
 
 public:
@@ -26,3 +28,20 @@ public:
 
 
 };
+=======
+    struct Node {
+        Node* head;
+        char item;
+        Node* tail;
+    };
+Node* stackPt;
+
+public:
+    Stack();
+    void Push(const char item);
+    void Pop();
+    int stackSize() const;
+    bool emptyStack() const;
+};
+
+>>>>>>> Stashed changes
