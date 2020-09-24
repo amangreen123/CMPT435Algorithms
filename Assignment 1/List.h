@@ -1,24 +1,20 @@
-#pragma once
 #include <string>
+using namespace std;
 
-class List {
 
+class Stack { //constructor
+    int numChar;//number of elements in struct
 private:
-	
-	typedef struct Node {
-		std::string items;
-		Node* nextItem;
 
-	}* Pointer;
-	 
-	Pointer head;
-	Pointer curr;//current pointer
-	Pointer temp;//temporary pointer
+    struct Node {
+        char item;
+        Node* tail;
+    };
+Node* stackPt;
 
 public:
-	List();
-	void AddNode(std:: string addItem);
-	void RemoveNode(std::string delData);
-	void PrintList();
-
+    Stack();
+    void Push(const char item);
+    char Pop();
+    bool emptyStack() const;
 };
