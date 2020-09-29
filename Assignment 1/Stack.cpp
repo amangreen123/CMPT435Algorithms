@@ -12,19 +12,19 @@ Stack::Stack()// constructor when adding new stack
 
 
 bool Stack::emptyStack() const {
-     return  stackPt == NULL;
+    return  stackPt == NULL;
     //return numChar ==  0;
 }
 
 void Stack::Push(char item) {
     Node* n = new Node;
-    n -> item = item;
-    if(stackPt == NULL){
+    n->item = item;
+    if (stackPt == NULL) {
         stackPt = n;
-        stackPt ->tail = NULL;
+        stackPt->tail = NULL;
     }
-    else{
-        n ->tail = stackPt;
+    else {
+        n->tail = stackPt;
         stackPt = n;
     }
 
@@ -33,8 +33,9 @@ void Stack::Push(char item) {
 char Stack::Pop() {
     if (stackPt == NULL) {
         //nothing on the stack
-    } else {
-        Node *p = stackPt;
+    }
+    else {
+        Node* p = stackPt;
         stackPt = stackPt->tail;
         p->tail = NULL;
         char item = p->item;

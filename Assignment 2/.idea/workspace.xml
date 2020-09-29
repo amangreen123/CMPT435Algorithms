@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:orign" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="52267797-77bf-4cfb-a0a0-12c5b8941678" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/.vs/Lists_Stacks/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/.vs/Lists_Stacks/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/.vs/Lists_Stacks/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/.vs/Lists_Stacks/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/.vs/Lists_Stacks/v16/Browse.VC.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/.vs/Lists_Stacks/v16/Browse.VC.db-wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/Assignment1.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/Assignment1.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/Stack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/Stack.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/Stack.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/Stack.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1iA34gI3CyLMaYadV5iciKJPNyJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52267797-77bf-4cfb-a0a0-12c5b8941678" name="Default Changelist" comment="" />
+      <created>1601336380056</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601336380056</updated>
+      <workItem from="1601336381093" duration="1018000" />
+      <workItem from="1601337529320" duration="46000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="411" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601337396102">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="411" y="166" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601337396102" />
+    <state x="737" y="266" key="FileChooserDialogImpl" timestamp="1601337377457">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="737" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601337377457" />
+  </component>
+</project>

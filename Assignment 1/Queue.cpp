@@ -1,7 +1,7 @@
 #include <iostream>
 #include<cstdlib>
 using namespace std;
-#include "../Queue.h"
+#include "/Queue.h"
 
 Queue::Queue()// constructor when adding new node
 {
