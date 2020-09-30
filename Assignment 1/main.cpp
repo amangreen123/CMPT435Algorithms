@@ -3,7 +3,7 @@
 #include<iostream>
 #include <string>
 #include <vector>
-#include "/Queue.h"
+#include "Queue.h"
 #include "Stack.h"
 #pragma
 
@@ -25,7 +25,9 @@ bool compareList(Stack& s, Queue& q) {
         }
 
     }
+    return 0;
 }
+
 int main(int argc, char** argv) {
 
     Stack stack;
