@@ -1,5 +1,10 @@
+
+
 class Stack { //constructor
+   
+    
     int numChar;//number of elements in struct
+
 private:
 
     struct Node {
@@ -13,5 +18,10 @@ public:
     void Push(const char item);
     char Pop();
     bool emptyStack() const;
+
+
+
 };
+
+
 

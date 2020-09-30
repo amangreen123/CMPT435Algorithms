@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "/Queue.h"
-#include "/Stack.h"
+#include "Stack.h"
 #pragma
 
 using namespace std;

@@ -1,8 +1,9 @@
 #include<cstdlib>
 #include<iostream>
-#include "/Stack.h"
-#include<cstddef>
+#include "Stack.h"
+#include <cstddef>
 #pragma
+
 using namespace std;
 
 Stack::Stack()// constructor when adding new stack
@@ -17,7 +18,7 @@ bool Stack::emptyStack() const {
 }
 
 void Stack::Push(char item) {
-    Node* n = new Node;
+    Stack::Node* n = new Node;
     n->item = item;
     if (stackPt == NULL) {
         stackPt = n;
