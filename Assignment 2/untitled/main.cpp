@@ -10,12 +10,6 @@ using namespace std;
 vector<string> words;
 int num_comparison = 0; // increment comparsion
 
-void swap(int &a, int &b){
-    int temp = a;
-    a = b;
-    b = temp;
-}
-
 
 int compare_String(string a,string b){
   int i = 0;
@@ -42,15 +36,14 @@ void sSort() {
     int i, j, imin;
 
     for (i = 0; i < words.size() - 1; i++) {
-        imin = 1; //index of minium data
+        imin = i; //index of minium data
         for (j = i + 1; j < words.size(); j++) {
-            if (j >= 0 && compare_String(words[i],words[imin]) > 0) {
+            if (j >= 0 && compare_String(words[imin],words[j]) > 0) {
                 imin = j;
             }
-            swap(words[j], words[imin]);
             num_comparison++;
         }
-
+        swap(words[i], words[imin]);
     }
     cout<< "Selection sort number of comparisons is " <<num_comparison<<"\n";
 }
@@ -74,6 +67,43 @@ void InSort(){
     cout<< "Insertion sort number of comparisons is " <<num_comparison<<"\n";
 }
 
+//Msort(){}
+
+int partiton(int low,int high){
+    string pivot = words[high];
+    int i = (low - 1);
+
+    for(int j = low; j < high; j++){
+        if(words[j] <= pivot){
+            i++;
+           swap(words[i],words[j]);
+            //string temp = words[low];
+           //words[low] = words[i];
+          // words[i] = temp;
+        }
+    }
+
+    string temp = words[low+1];
+    words[i] = temp;
+    swap(words[i + 1], words[high]);
+    return i + 1;
+}
+
+void Qsort(int low,int high){
+    if(low < high){
+        int sep = partiton(low,high);
+
+        Qsort(low,sep -  1);
+        Qsort(sep + 1, high);
+        num_comparison++;
+    }
+}
+
+void Print(){
+    for(int i = 0; i < words.size(); ++i){
+        cout << words[i]<<"\n";
+    }
+}
 
 
     int main(int argc, char **argv) {
@@ -93,13 +123,10 @@ void InSort(){
                 words.push_back(text);
                // cout << text << "\n";
             }
-
-            sSort();
+            //sSort();
             //InSort();
             letterFile.close();
         }
-
-
 
         for (int i = 0; i < words.size()-1; i++) {
              cout<<words[i]<<"\n";
