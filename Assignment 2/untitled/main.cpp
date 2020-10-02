@@ -90,8 +90,7 @@ void Merge(vector<string>&mitems, int p,int q,int r){
   k = p;
 
   while(i < n1 && j < n2){
-
-      if(leftVector.at(i) <= rightVector.at(j)) {
+      if(compare_String(leftVector.at(i),rightVector.at(j)) < 0) {
           words[k] = leftVector.at(i);
           i++;
       }else{
@@ -118,7 +117,6 @@ void Msort(vector<string>&mitems, int leftVect, int rightVect){
         int m = leftVect + (rightVect - leftVect) / 2;
         Msort(words,leftVect,m);
         Msort(words,m + 1, rightVect);
-
         Merge(words,leftVect,m,rightVect);
         num_comparison++;
     }
