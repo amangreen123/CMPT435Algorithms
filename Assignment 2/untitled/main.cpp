@@ -69,7 +69,7 @@ void InSort(){
 
 //Msort(){}
 
-int partiton(int low,int high){
+int partiton(vector<string>&item, int low,int high){
     string pivot = words[high];
     int i = (low - 1);
 
@@ -81,36 +81,24 @@ int partiton(int low,int high){
            //words[low] = words[i];
           // words[i] = temp;
         }
+        num_comparison++;
     }
-
-    string temp = words[low+1];
-    words[i] = temp;
     swap(words[i + 1], words[high]);
     return i + 1;
 }
 
-void Qsort(int low,int high){
+void Qsort(vector<string>&items,int low, int high){
     if(low < high){
-        int sep = partiton(low,high);
+        int sep = partiton(words,low,high);
 
-        Qsort(low,sep -  1);
-        Qsort(sep + 1, high);
-        num_comparison++;
+        Qsort(words,low,sep -  1);
+        Qsort(words,sep + 1, high);
     }
 }
-
-void Print(){
-    for(int i = 0; i < words.size(); ++i){
-        cout << words[i]<<"\n";
-    }
-}
-
 
     int main(int argc, char **argv) {
         ifstream letterFile;
         string text;
-
-
         letterFile.open("magicitems.txt", ios::in);
 
         if (!letterFile) {
@@ -125,11 +113,12 @@ void Print(){
             }
             //sSort();
             //InSort();
+          Qsort(words,0,words.size());
             letterFile.close();
         }
 
         for (int i = 0; i < words.size()-1; i++) {
-             cout<<words[i]<<"\n";
+            cout<<words[i]<<"\n";
          }
 
     }
