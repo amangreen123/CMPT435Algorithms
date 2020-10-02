@@ -45,7 +45,7 @@ void sSort() {
         }
         swap(words[i], words[imin]);
     }
-    cout<< "Selection sort number of comparisons is " <<num_comparison<<"\n";
+    cout<<"-----------------------------"<<"\n"<< "Selection sort number of comparisons is " <<num_comparison<<"\n";
 }
 
 void InSort(){
@@ -64,7 +64,7 @@ void InSort(){
         words[j+1] = key;
         num_comparison++;
     }
-    cout<< "Insertion sort number of comparisons is " <<num_comparison<<"\n";
+   cout <<"-----------------------------"<<"\n"<< "Insertion sort number of comparisons is " <<num_comparison<<"\n";
 }
 void Merge(vector<string>&mitems, int p,int q,int r){
   int n1 = q - p + 1;
@@ -149,32 +149,66 @@ void Qsort(vector<string>&items,int low, int high){
     }
 }
 
+void openFile(){
+    ifstream letterFile;
+    string text;
+
+    letterFile.open("magicitems.txt", ios::in);
+
+    if (!letterFile) {
+        cout << "\n Error opening file";
+        exit(0);
+    }
+
+    if (letterFile.is_open()) {
+        while (std::getline(letterFile, text)) {
+            words.push_back(text);
+            // cout << text << "\n";
+        }
+        letterFile.close();
+    }
+}
+
+void printFile(){
+    for (int i = 0; i < words.size()-1; i++) {
+        cout<<words[i]<<"\n";
+    }
+}
+
     int main(int argc, char **argv) {
-        ifstream letterFile;
-        string text;
-        letterFile.open("magicitems.txt", ios::in);
 
-        if (!letterFile) {
-            cout << "\n Error opening file";
-            exit(0);
-        }
+    openFile();
+    sSort();
+    printFile();
+    words.clear();
+    num_comparison = 0;
 
-        if (letterFile.is_open()) {
-            while (std::getline(letterFile, text)) {
-                words.push_back(text);
-               // cout << text << "\n";
-            }
-            //sSort();
-            //InSort();
-            // Qsort(words,0,words.size());
-           // cout << "Quick sort number of comparisons is " <<num_comparison<<"\n";
-           Msort(words,0,words.size() - 1);
-            cout << "Merge sort number of comparisons is " <<num_comparison<<"\n";
-            letterFile.close();
-        }
+    openFile();
+    InSort();
+    printFile();
+    words.clear();
+    num_comparison = 0;
 
-        for (int i = 0; i < words.size()-1; i++) {
-            cout<<words[i]<<"\n";
-         }
+    openFile();
+    Qsort(words,0,words.size());
+    cout <<"-----------------------------"<<"\n"<< "Quick sort number of comparisons is " <<num_comparison<<"\n";
+    printFile();
+    words.clear();
+    num_comparison = 0;
+
+    openFile();
+    Msort(words, 0, words.size() - 1);
+    cout <<"-----------------------------"<<"\n"<< "Merge sort number of comparisons is " << num_comparison << "\n";
+    printFile();
+    words.clear();
+    num_comparison = 0;
+
+        //InSort();
+        // Qsort(words,0,words.size());
+        //cout << "Quick sort number of comparisons is " <<num_comparison<<"\n";
+        //Msort(words, 0, words.size() - 1);
+        //cout << "Merge sort number of comparisons is " << num_comparison << "\n";
+
+
 
     }
