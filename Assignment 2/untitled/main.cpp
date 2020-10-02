@@ -74,7 +74,7 @@ int partiton(vector<string>&item, int low,int high){
     int i = (low - 1);
 
     for(int j = low; j < high; j++){
-        if(words[j] <= pivot){
+        if(compare_String(words[j],pivot) < 0){
             i++;
            swap(words[i],words[j]);
             //string temp = words[low];
@@ -84,6 +84,7 @@ int partiton(vector<string>&item, int low,int high){
         num_comparison++;
     }
     swap(words[i + 1], words[high]);
+    cout<< "Quick sort number of comparisons is " <<num_comparison<<"\n";
     return i + 1;
 }
 
