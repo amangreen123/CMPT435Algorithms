@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -28,7 +31,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52267797-77bf-4cfb-a0a0-12c5b8941678" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assignment 1/Assignment1.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 1/Assignment1.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Assignment 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Assignment 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/MakeFile" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/MakeFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/untitled/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +47,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="MakefileLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectId" id="1iA34gI3CyLMaYadV5iciKJPNyJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -52,6 +65,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ObjectiveC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MakeFile" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
@@ -71,6 +86,8 @@
       <workItem from="1601336381093" duration="1018000" />
       <workItem from="1601337529320" duration="46000" />
       <workItem from="1601520188917" duration="84000" />
+      <workItem from="1601683830782" duration="202000" />
+      <workItem from="1601684035703" duration="507000" />
     </task>
     <servers />
   </component>
@@ -90,13 +107,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="411" y="168" width="1087" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601520270189">
+    <state x="706" y="187" width="1087" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601684272269">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="411" y="168" width="1087" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601520270189" />
-    <state x="737" y="266" key="FileChooserDialogImpl" timestamp="1601520254898">
+    <state x="706" y="187" width="1087" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601684272269" />
+    <state x="737" y="266" key="FileChooserDialogImpl" timestamp="1601684263646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601520254898" />
+    <state x="737" y="266" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1601684263646" />
+    <state x="913" y="202" key="SettingsEditor" timestamp="1601684530651">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="913" y="202" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601684530651" />
+    <state x="518" y="424" width="883" height="208" key="makefile.clean.confirm.dialog" timestamp="1601684039717">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="518" y="424" width="883" height="208" key="makefile.clean.confirm.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601684039717" />
   </component>
 </project>

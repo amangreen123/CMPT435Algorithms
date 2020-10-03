@@ -32,7 +32,7 @@ int compare_String(string a,string b){
       i++;
     }
 }
-void sSort() { 
+void sSort() {
     int i, j, imin;
 
     for (i = 0; i < words.size() - 1; i++) {
