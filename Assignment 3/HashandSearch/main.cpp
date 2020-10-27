@@ -88,14 +88,32 @@ void Msort(vector<string>&mitems, int leftVect, int rightVect){
     }
 }
 
-int linearSearch(vector<string> words, int key){
-
+int linearSearch(vector<string> words, string key){
     for(int i = 0; i < words.size(); i++){
        if(words[i] == key ){
-            return words[i]
+            return i;
         }
    }
    return -1;
+}
+
+bool binarySearch(vector<string> words, string item) {
+    if (words.size() == 0) {
+        return false;
+    } else {
+        int mid = words.size() / 2;
+        if (words[mid] == item) {
+            return true;
+        } else {
+            if (item < words[mid]) {
+                vector<string> left(words.begin(), words.begin() + mid);
+                return binarySearch(left, item);
+            } else {
+                vector<string> right(words.begin() + mid + 1, words.end());
+                return binarySearch(right, item);
+            }
+        }
+    }
 }
 
 
@@ -132,5 +150,9 @@ int main()
     Msort(words, 0, words.size() - 1);
     printFile();
     words.clear();
-    num_comparison = 0;
+
+    // create a random list variable
+    // run a loop through the random list, push items selected into random list
+    // maybe do a sort again just to be sure it's sorted
+    // run your search functions
 }
