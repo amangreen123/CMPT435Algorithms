@@ -10,6 +10,7 @@
 using namespace std;
 
 vector<string> words;
+vector<string> selectedWords;
 int num_comparison = 0;
 
 int compare_String(string a,string b){
@@ -90,19 +91,23 @@ void Msort(vector<string>&mitems, int leftVect, int rightVect){
     }
 }
 
-string randomWord(){
-    std::set<string> indexes;
+ vector<string> randomWord(){
+    std::set<int> indexes;
 //https://stackoverflow.com/questions/13772475/how-to-get-random-and-unique-values-from-a-vector
-    while(indexes.size() < min(42,words.size())){ // uses a loop to put random string into a set and stops when it reaches 42
-        int randomIndex = rand() % words.size();
+    while(indexes.size() < fmin(42,selectedWords.size())){ // uses a loop to put random string into a set and stops when it reaches 42
+        int randomIndex = rand() % selectedWords.size();
         if(indexes.find(randomIndex) == indexes.end()){
-            words.push_back(words[randomIndex]);
+
+            selectedWords.push_back(words[randomIndex]);
             indexes.insert(randomIndex);
         }
     }
+    return selectedWords;
 }
+
 int linearSearch(vector<string> words, string key){
     for(int i = 0; i < words.size(); i++){
+        num_comparison ++;
        if(words[i] == key ){
             return i;
         }
@@ -120,6 +125,7 @@ bool binarySearch(vector<string> words, string item) {
         } else {
             if (item < words[mid]) {
                 vector<string> left(words.begin(), words.begin() + mid);
+                num_comparison ++;
                 return binarySearch(left, item);
             } else {
                 vector<string> right(words.begin() + mid + 1, words.end());
@@ -130,7 +136,7 @@ bool binarySearch(vector<string> words, string item) {
 }
 
 
-
+// openFile() deals with the original list
 void openFile(){
     ifstream letterFile;
     string text;
@@ -151,16 +157,25 @@ void openFile(){
     }
 }
 
+// printFile() is dealing with your selectedWords instead of the original list, as per the last projects
 void printFile(){
-    for (int i = 0; i < words.size()-1; i++) {
-        cout<<words[i]<<"\n";
+    for (int i = 0; i < selectedWords.size()-1; i++) {
+        cout<<selectedWords[i]<<"\n";
     }
 }
 
 int main()
 {
     openFile();
+    randomWord();
+    //linearSearch(words,);
     Msort(words, 0, words.size() - 1);
+
+    for (int i = 0; i < sizeof(words); i++)
+    {
+        linearSearch(words, words[i]);
+    }
+
     printFile();
     words.clear();
 
@@ -168,4 +183,8 @@ int main()
     // run a loop through the random list, push items selected into random list
     // maybe do a sort again just to be sure it's sorted
     // run your search functions
+
+    // don't mergeSort() words, sort selectedWords
+    // this is because once we randomly select our words, we're not touching the original list anymore, plus that one is already sorted
+    // you might also need to printFile() in the loops, but we'll see when you test
 }
