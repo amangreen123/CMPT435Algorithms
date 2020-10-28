@@ -3,6 +3,8 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include <set>
+
 #pragma
 
 using namespace std;
@@ -88,6 +90,17 @@ void Msort(vector<string>&mitems, int leftVect, int rightVect){
     }
 }
 
+string randomWord(){
+    std::set<string> indexes;
+//https://stackoverflow.com/questions/13772475/how-to-get-random-and-unique-values-from-a-vector
+    while(indexes.size() < min(42,words.size())){ // uses a loop to put random string into a set and stops when it reaches 42
+        int randomIndex = rand() % words.size();
+        if(indexes.find(randomIndex) == indexes.end()){
+            words.push_back(words[randomIndex]);
+            indexes.insert(randomIndex);
+        }
+    }
+}
 int linearSearch(vector<string> words, string key){
     for(int i = 0; i < words.size(); i++){
        if(words[i] == key ){
