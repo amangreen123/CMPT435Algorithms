@@ -18,6 +18,7 @@ int binary_num_comparison_per_item = 0;
 static int LINES_IN_FILE = 666;
 static int HASH_TABLE_SIZE = 250;
 
+struct  Ha
 
 int partiton(vector<int> &item, int low, int high) {
     int pivot = item[high];
@@ -36,6 +37,24 @@ int partiton(vector<int> &item, int low, int high) {
     return i + 1;
 }
 
+int partitonString(vector<string> &item, int low, int high) {
+    string pivot = item[high];
+    int i = (low - 1);
+
+    for (int j = low; j < high; j++) {
+        if (item[j] < pivot) {
+            i++;
+            swap(item[i], item[j]);
+            //string temp = words[low];
+            //words[low] = words[i];
+            // words[i] = temp;
+        }
+    }
+    swap(item[i + 1], item[high]);
+    return i + 1;
+}
+
+
 void Qsort(vector<int> &items, int low, int high) {
     if (low < high) {
         int sep = partiton(items, low, high);
@@ -45,11 +64,26 @@ void Qsort(vector<int> &items, int low, int high) {
     }
 }
 
+void QsortString(vector<string> &items, int low, int high) {
+    if (low < high) {
+        int sep = partitonString(items, low, high);
+
+        QsortString(items, low, sep - 1);
+        QsortString(items, sep + 1, high);
+    }
+}
+
+
 void randomWord() {
     srand(time(0));
-// uses a loop to put random string into a set and stops when it reaches 42
     for (int i = 0; i < 42; i++) {
-        selectedWords.push_back(magicItems.at(rand() % 665));
+       selectedWords.push_back(magicItems.at(rand() % 665));
+        //int randIdx = rand() % 665;
+        //string randWord = magicItems.at(randIdx);
+       // Used these to Test
+       // selectedWords.push_back(randWord);
+        //cout << "Random word is "  << randWord << endl;
+       // cout << "random index "  << randIdx << endl;
     }
 }
 
@@ -74,7 +108,7 @@ bool binarySearch(vector<string> selectedWords, string item) {
             return true;
         } else {
             if (item < selectedWords[mid]) {
-                vector<string> left(selectedWords.begin(), selectedWords.begin() + mid);
+                vector<string>left(selectedWords.begin(), selectedWords.begin() + mid);
                 return binarySearch(left, item);
             } else {
                 vector<string> right(selectedWords.begin() + mid + 1, selectedWords.end());
@@ -92,6 +126,17 @@ void printFile() {
     }
 }
 
+struct Hash{
+    int value,key;
+    Hash *n;
+    Hash *p;
+    Hash(int key, int value){
+        this -> key = key;
+        this -> value = value;
+        this -> n = NULL;
+    }
+
+};
 
 static int makeHashCode(string str) {
     string tmp = str;
@@ -107,17 +152,10 @@ static int makeHashCode(string str) {
         char thisLetter = str[i];
         int thisValue = (int) thisLetter;
         letterTotal = letterTotal + thisValue;
-        // Test: print the char and the hash.
-        /*
-        System.out.print(" [");
-        System.out.print(thisLetter);
-        System.out.print(thisValue);
-        System.out.print("] ");  // */
     }
     // Scale letterTotal to fit in HASH_TABLE_SIZE.
     int hashCode = (letterTotal * 1) % HASH_TABLE_SIZE;  // % is the "mod" operator
     // TODO: Experiment with letterTotal * 2, 3, 5, 50, etc.
-
     return hashCode;
 }
 
@@ -126,20 +164,6 @@ void analyzeHashValues(vector<int> hashValues) {
 
     // Sort the hash values.
     Qsort(hashValues, 0, hashValues.size() - 1);  // This is a "dual-pivot" quicksort.
-    // See https://zgrepcode.com/java/oracle/jdk-8u181/java/util/dualpivotquicksort.java
-    // Actually, look at that JDK source code; it's a bunch of sorts.
-
-    // Test: print the sorted hash values.
-    /*
-for (int i=0; i < LINES_IN_FILE; i++) {
-   System.out.println(hashValues[i]);
-}
-// */
-
-    // Create a histogram-like report based on the count of each unique hash value,
-    // count the individual entry size,
-    // the total space used (in items),
-    // and the standard deviation of their distribution over the hash table.
     int asteriskCount = 0;
     int bucketCount[HASH_TABLE_SIZE];
     int totalCount = 0;
@@ -232,11 +256,13 @@ int main() {
 
     randomWord();
 
+    QsortString(magicItems, 0, magicItems.size() - 1);
+
     for (int i = 0; i < selectedWords.size(); i++) {
         cout << " linear  number of comparisons of item number : " << i + 1 << " is "
-             << linearSearch(selectedWords, selectedWords[i]) << endl;
+             << linearSearch(magicItems, selectedWords[i]) << endl;
         binary_num_comparison_per_item = 0;
-        binarySearch(selectedWords, selectedWords[i]);
+        binarySearch(magicItems, selectedWords[i]);
         cout << " binary  number of comparisons of item number : " << i + 1 << " is " << binary_num_comparison_per_item
              << endl;
     }
