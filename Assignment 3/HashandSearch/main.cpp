@@ -3,132 +3,81 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include <set>
+#include<ctime>
+#include <math.h>
 
 #pragma
 
 using namespace std;
 
-vector<string> words;
 vector<string> selectedWords;
-int num_comparison = 0;
+vector<string> magicItems;
+int linear_num_comparison = 0;
+int binary_num_comparison = 0;
+int binary_num_comparison_per_item = 0;
+static int LINES_IN_FILE = 666;
+static int HASH_TABLE_SIZE = 250;
 
-int compare_String(string a,string b){
-    int i = 0;
 
-    while(true){
-        if(a.length() <= i && b.length() <= i )
-            return 0;
-        if(a.length() <= i ){
-            return -1;
-        }
-        if(b.length() <= i ){
-            return 1;
-        }
-        if(toupper(a[i]) < toupper(b[i]) ){
-            return -1;
-        }
-        else if (toupper(a[i]) >  toupper(b[i])){
-            return 1;
-        }
-        i++;
-    }
-}
+int partiton(vector<int> &item, int low, int high) {
+    int pivot = item[high];
+    int i = (low - 1);
 
-void Merge(vector<string>&mitems, int p,int q,int r){
-    int n1 = q - p + 1;
-    int n2 = r - q;
-
-    vector<string> leftVector;
-    vector<string> rightVector;
-
-    leftVector.resize(n1 + 1);
-    rightVector.resize(n2 + 1);
-
-    for(int i = 0; i < n1; i++){
-        leftVector.at(i) = mitems.at(p + i);
-        //try just p + i if it doesnt work
-    }
-    for(int j = 0; j < n2; j++){
-        rightVector.at(j) = mitems.at(q+j+1);
-        //q + 1 + j
-    }
-    int i,j,k;
-    i = 0;
-    j = 0;
-    k = p;
-
-    while(i < n1 && j < n2){
-        if(compare_String(leftVector.at(i),rightVector.at(j)) < 0) {
-            words[k] = leftVector.at(i);
+    for (int j = low; j < high; j++) {
+        if (item[j] < pivot) {
             i++;
-        }else{
-            words[k] = rightVector.at(j);
-            j++;
-        }
-        k++;
-        num_comparison++;
-    }
-
-    while(i < n1){
-        words[k] = leftVector[i];
-        i++;
-        k++;
-    }
-    while(j < n2){
-        words[k] = rightVector[j];
-        j++;
-        k++;
-    }
-}
-
-void Msort(vector<string>&mitems, int leftVect, int rightVect){
-    if(leftVect < rightVect){
-        int m = leftVect + (rightVect - leftVect) / 2;
-        Msort(words,leftVect,m);
-        Msort(words,m + 1, rightVect);
-        Merge(words,leftVect,m,rightVect);
-    }
-}
-
- vector<string> randomWord(){
-    std::set<int> indexes;
-//https://stackoverflow.com/questions/13772475/how-to-get-random-and-unique-values-from-a-vector
-    while(indexes.size() < fmin(42,selectedWords.size())){ // uses a loop to put random string into a set and stops when it reaches 42
-        int randomIndex = rand() % selectedWords.size();
-        if(indexes.find(randomIndex) == indexes.end()){
-
-            selectedWords.push_back(words[randomIndex]);
-            indexes.insert(randomIndex);
+            swap(item[i], item[j]);
+            //string temp = words[low];
+            //words[low] = words[i];
+            // words[i] = temp;
         }
     }
-    return selectedWords;
+    swap(item[i + 1], item[high]);
+    return i + 1;
 }
 
-int linearSearch(vector<string> words, string key){
-    for(int i = 0; i < words.size(); i++){
-        num_comparison ++;
-       if(words[i] == key ){
+void Qsort(vector<int> &items, int low, int high) {
+    if (low < high) {
+        int sep = partiton(items, low, high);
+
+        Qsort(items, low, sep - 1);
+        Qsort(items, sep + 1, high);
+    }
+}
+
+void randomWord() {
+    srand(time(0));
+// uses a loop to put random string into a set and stops when it reaches 42
+    for (int i = 0; i < 42; i++) {
+        selectedWords.push_back(magicItems.at(rand() % 665));
+    }
+}
+
+int linearSearch(vector<string> selectedWords, string key) {
+    for (int i = 0; i < selectedWords.size(); i++) {
+        linear_num_comparison++;
+        if (selectedWords[i] == key) {
             return i;
         }
-   }
-   return -1;
+    }
+    return -1;
 }
 
-bool binarySearch(vector<string> words, string item) {
-    if (words.size() == 0) {
+bool binarySearch(vector<string> selectedWords, string item) {
+    binary_num_comparison++;
+    binary_num_comparison_per_item++;
+    if (selectedWords.size() == 0) {
         return false;
     } else {
-        int mid = words.size() / 2;
-        if (words[mid] == item) {
+        int mid = selectedWords.size() / 2;
+        if (selectedWords[mid] == item) {
             return true;
         } else {
-            if (item < words[mid]) {
-                vector<string> left(words.begin(), words.begin() + mid);
-                num_comparison ++;
+            if (item < selectedWords[mid]) {
+                vector<string> left(selectedWords.begin(), selectedWords.begin() + mid);
                 return binarySearch(left, item);
             } else {
-                vector<string> right(words.begin() + mid + 1, words.end());
+                vector<string> right(selectedWords.begin() + mid + 1, selectedWords.end());
                 return binarySearch(right, item);
             }
         }
@@ -136,8 +85,114 @@ bool binarySearch(vector<string> words, string item) {
 }
 
 
-// openFile() deals with the original list
-void openFile(){
+// printFile() is dealing with your selectedWords instead of the original list, as per the last projects
+void printFile() {
+    for (int i = 0; i < selectedWords.size() - 1; i++) {
+        cout << selectedWords[i] << "\n";
+    }
+}
+
+
+static int makeHashCode(string str) {
+    string tmp = str;
+    str = "";
+    for (int i = 0; i < str.size(); i++) {
+        str += toupper(tmp[i]);
+    }
+    int length = str.length();
+    int letterTotal = 0;
+
+    // Iterate over all letters in the string, totalling their ASCII values.
+    for (int i = 0; i < length; i++) {
+        char thisLetter = str[i];
+        int thisValue = (int) thisLetter;
+        letterTotal = letterTotal + thisValue;
+        // Test: print the char and the hash.
+        /*
+        System.out.print(" [");
+        System.out.print(thisLetter);
+        System.out.print(thisValue);
+        System.out.print("] ");  // */
+    }
+    // Scale letterTotal to fit in HASH_TABLE_SIZE.
+    int hashCode = (letterTotal * 1) % HASH_TABLE_SIZE;  // % is the "mod" operator
+    // TODO: Experiment with letterTotal * 2, 3, 5, 50, etc.
+
+    return hashCode;
+}
+
+void analyzeHashValues(vector<int> hashValues) {
+    cout << "Hash Table Usage:";
+
+    // Sort the hash values.
+    Qsort(hashValues, 0, hashValues.size() - 1);  // This is a "dual-pivot" quicksort.
+    // See https://zgrepcode.com/java/oracle/jdk-8u181/java/util/dualpivotquicksort.java
+    // Actually, look at that JDK source code; it's a bunch of sorts.
+
+    // Test: print the sorted hash values.
+    /*
+for (int i=0; i < LINES_IN_FILE; i++) {
+   System.out.println(hashValues[i]);
+}
+// */
+
+    // Create a histogram-like report based on the count of each unique hash value,
+    // count the individual entry size,
+    // the total space used (in items),
+    // and the standard deviation of their distribution over the hash table.
+    int asteriskCount = 0;
+    int bucketCount[HASH_TABLE_SIZE];
+    int totalCount = 0;
+    int arrayIndex = 0;
+
+    for (int i = 0; i < HASH_TABLE_SIZE; i++) {
+        //printf("%03d ", i);
+        // cout <<endl;
+        asteriskCount = 0;
+        while ((arrayIndex < LINES_IN_FILE) && (hashValues[arrayIndex] == i)) {
+            cout << "*";
+            asteriskCount += 1;
+            arrayIndex += 1;
+        }
+
+        if (asteriskCount != 0) {
+            cout << "\n";
+            cout << "asteriskCount = " << asteriskCount << endl;
+        }
+        bucketCount[i] = asteriskCount;
+        totalCount = totalCount + asteriskCount;
+    }
+
+    cout << "Average load (count): ";
+    float averageLoad = (float) totalCount / HASH_TABLE_SIZE;
+    printf("%.2f%n", averageLoad);
+
+    cout << "\nAverage load (calc) : ";
+    averageLoad = (float) LINES_IN_FILE / HASH_TABLE_SIZE;
+    printf("%.2f%n", averageLoad);
+
+    cout << "\nStandard Deviation: ";
+    // TODO: Refactor this into its own method.
+    double sum = 0;
+    for (int i = 0; i < HASH_TABLE_SIZE; i++) {
+        // For each value in the array...
+        // ... subtract the mean from each one ...
+        double result = bucketCount[i] - averageLoad;
+        // ... and square the result.
+        double square = result * result;
+        // Sum all of those squares.
+        sum = sum + square;
+    }
+    // Divide the sum by the number of values ...
+    double temp = sum / HASH_TABLE_SIZE;
+    // ... and take the square root of that.
+    double stdDev = sqrt(temp);
+    printf("%.2f%n", stdDev);
+    cout << endl;
+}
+
+int main() {
+
     ifstream letterFile;
     string text;
 
@@ -150,40 +205,56 @@ void openFile(){
 
     if (letterFile.is_open()) {
         while (std::getline(letterFile, text)) {
-            words.push_back(text);
+            magicItems.push_back(text);
             // cout << text << "\n";
         }
         letterFile.close();
     }
-}
 
-// printFile() is dealing with your selectedWords instead of the original list, as per the last projects
-void printFile(){
-    for (int i = 0; i < selectedWords.size()-1; i++) {
-        cout<<selectedWords[i]<<"\n";
+    cout << "Hash code tests and analysis." << endl;
+    cout << "-----------------------------" << endl;
+
+    vector<int> hashValues;
+    // Print the array and hash values.
+    int hashCode = 0;
+    for (int i = 0; i < LINES_IN_FILE; i++) {
+        cout << i;
+        cout << ". " << magicItems.at(i) << " - ";
+        hashCode = makeHashCode(magicItems.at(i));
+        printf("%03d%n", hashCode);
+        cout << endl;
+        hashValues.assign(i, hashCode);
     }
-}
 
-int main()
-{
-    openFile();
+    // Analyze the distribution of hash values.
+    analyzeHashValues(hashValues);
+
+
     randomWord();
-    //linearSearch(words,);
-    Msort(words, 0, words.size() - 1);
 
-    for (int i = 0; i < sizeof(words); i++)
-    {
-        linearSearch(words, words[i]);
+    for (int i = 0; i < selectedWords.size(); i++) {
+        cout << " linear  number of comparisons of item number : " << i + 1 << " is "
+             << linearSearch(selectedWords, selectedWords[i]) << endl;
+        binary_num_comparison_per_item = 0;
+        binarySearch(selectedWords, selectedWords[i]);
+        cout << " binary  number of comparisons of item number : " << i + 1 << " is " << binary_num_comparison_per_item
+             << endl;
     }
 
-    printFile();
-    words.clear();
+    cout << " total number of comparisons for linear search is " << linear_num_comparison << endl;
+    cout << " total number of comparisons for binary search is " << binary_num_comparison << endl;
+
+    cout << " linear average is " << linear_num_comparison / 42 << endl;
+    cout << " binary average is " << binary_num_comparison / 42 << endl;
+
+
+    //printFile();
+    selectedWords.clear();
 
     // create a random list variable
     // run a loop through the random list, push items selected into random list
     // maybe do a sort again just to be sure it's sorted
     // run your search functions
-
     // don't mergeSort() words, sort selectedWords
     // this is because once we randomly select our words, we're not touching the original list anymore, plus that one is already sorted
     // you might also need to printFile() in the loops, but we'll see when you test
