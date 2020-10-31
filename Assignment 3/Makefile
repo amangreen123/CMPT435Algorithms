@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 3\HashandSearch"
+CMAKE_SOURCE_DIR = C:\Users\aaron\CLionProjects\Assingment3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 3\HashandSearch\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\aaron\CLionProjects\Assingment3\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 3\HashandSearch\cmake-build-debug\CMakeFiles" "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 3\HashandSearch\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\aaron\CLionProjects\Assingment3\cmake-build-debug\CMakeFiles C:\Users\aaron\CLionProjects\Assingment3\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 3\HashandSearch\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\aaron\CLionProjects\Assingment3\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named HashandSearch
+# Target rules for targets named Assingment3
 
 # Build rule for target.
-HashandSearch: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 HashandSearch
-.PHONY : HashandSearch
+Assingment3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Assingment3
+.PHONY : Assingment3
 
 # fast build rule for target.
-HashandSearch/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashandSearch.dir\build.make CMakeFiles/HashandSearch.dir/build
-.PHONY : HashandSearch/fast
+Assingment3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/build
+.PHONY : Assingment3/fast
+
+Queue.obj: Queue.cpp.obj
+
+.PHONY : Queue.obj
+
+# target to build an object file
+Queue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/Queue.cpp.obj
+.PHONY : Queue.cpp.obj
+
+Queue.i: Queue.cpp.i
+
+.PHONY : Queue.i
+
+# target to preprocess a source file
+Queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/Queue.cpp.i
+.PHONY : Queue.cpp.i
+
+Queue.s: Queue.cpp.s
+
+.PHONY : Queue.s
+
+# target to generate assembly for a file
+Queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/Queue.cpp.s
+.PHONY : Queue.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -148,7 +175,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashandSearch.dir\build.make CMakeFiles/HashandSearch.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -157,7 +184,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashandSearch.dir\build.make CMakeFiles/HashandSearch.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -166,7 +193,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\HashandSearch.dir\build.make CMakeFiles/HashandSearch.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assingment3.dir\build.make CMakeFiles/Assingment3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -177,7 +204,10 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... HashandSearch
+	@echo ... Assingment3
+	@echo ... Queue.obj
+	@echo ... Queue.i
+	@echo ... Queue.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

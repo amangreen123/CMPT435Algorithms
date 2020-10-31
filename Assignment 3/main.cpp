@@ -4,7 +4,9 @@
 #include<string>
 #include<vector>
 #include<ctime>
-#include <math.h>
+#include<math.h>
+#include "Queue.h"
+
 
 #pragma
 
@@ -17,23 +19,22 @@ int binary_num_comparison = 0;
 int binary_num_comparison_per_item = 0;
 static int LINES_IN_FILE = 666;
 static int HASH_TABLE_SIZE = 250;
+Queue queue;
 
-struct  Ha
-
-int partiton(vector<int> &item, int low, int high) {
-    int pivot = item[high];
+int partiton(Queue &item, int low, int high) {
+    int pivot = item.Get(high);
     int i = (low - 1);
 
     for (int j = low; j < high; j++) {
-        if (item[j] < pivot) {
+        if (item.Get(j) < pivot) {
             i++;
-            swap(item[i], item[j]);
+            item.swap(item.Get(i), item.Get(j));
             //string temp = words[low];
             //words[low] = words[i];
             // words[i] = temp;
         }
     }
-    swap(item[i + 1], item[high]);
+    item.swap(item.Get(i+1), item.Get(i));
     return i + 1;
 }
 
@@ -55,7 +56,7 @@ int partitonString(vector<string> &item, int low, int high) {
 }
 
 
-void Qsort(vector<int> &items, int low, int high) {
+void Qsort(Queue &items, int low, int high) {
     if (low < high) {
         int sep = partiton(items, low, high);
 
@@ -77,13 +78,13 @@ void QsortString(vector<string> &items, int low, int high) {
 void randomWord() {
     srand(time(0));
     for (int i = 0; i < 42; i++) {
-       selectedWords.push_back(magicItems.at(rand() % 665));
+        selectedWords.push_back(magicItems.at(rand() % 665));
         //int randIdx = rand() % 665;
         //string randWord = magicItems.at(randIdx);
-       // Used these to Test
-       // selectedWords.push_back(randWord);
+        // Used these to Test
+        // selectedWords.push_back(randWord);
         //cout << "Random word is "  << randWord << endl;
-       // cout << "random index "  << randIdx << endl;
+        // cout << "random index "  << randIdx << endl;
     }
 }
 
@@ -126,18 +127,6 @@ void printFile() {
     }
 }
 
-struct Hash{
-    int value,key;
-    Hash *n;
-    Hash *p;
-    Hash(int key, int value){
-        this -> key = key;
-        this -> value = value;
-        this -> n = NULL;
-    }
-
-};
-
 static int makeHashCode(string str) {
     string tmp = str;
     str = "";
@@ -159,7 +148,7 @@ static int makeHashCode(string str) {
     return hashCode;
 }
 
-void analyzeHashValues(vector<int> hashValues) {
+void analyzeHashValues(Queue hashValues) {
     cout << "Hash Table Usage:";
 
     // Sort the hash values.
@@ -173,7 +162,7 @@ void analyzeHashValues(vector<int> hashValues) {
         //printf("%03d ", i);
         // cout <<endl;
         asteriskCount = 0;
-        while ((arrayIndex < LINES_IN_FILE) && (hashValues[arrayIndex] == i)) {
+        while ((arrayIndex < LINES_IN_FILE) && (hashValues.Get(arrayIndex) == i)) {//use the get function
             cout << "*";
             asteriskCount += 1;
             arrayIndex += 1;
@@ -248,10 +237,11 @@ int main() {
         printf("%03d%n", hashCode);
         cout << endl;
         hashValues.assign(i, hashCode);
+        queue.enqueue(hashCode);
     }
 
     // Analyze the distribution of hash values.
-    analyzeHashValues(hashValues);
+    analyzeHashValues(queue);
 
 
     randomWord();
