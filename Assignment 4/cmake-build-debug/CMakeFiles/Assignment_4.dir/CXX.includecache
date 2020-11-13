@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/main.cpp
+cstdlib
+-
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+
