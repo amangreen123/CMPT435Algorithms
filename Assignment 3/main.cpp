@@ -26,6 +26,7 @@ int partiton(Queue &item, int low, int high) {
     int i = (low - 1);
 
     for (int j = low; j < high; j++) {
+
         if (item.Get(j) < pivot) {
             i++;
             item.swap(item.Get(i), item.Get(j));
@@ -130,18 +131,20 @@ void printFile() {
 static int makeHashCode(string str) {
     string tmp = str;
     str = "";
-    for (int i = 0; i < str.size(); i++) {
+    for (int i = 0; i < tmp.size(); i++) {
         str += toupper(tmp[i]);
     }
-    int length = str.length();
+
     int letterTotal = 0;
 
     // Iterate over all letters in the string, totalling their ASCII values.
-    for (int i = 0; i < length; i++) {
+    for (int i = 0; i < str.size(); i++) {
         char thisLetter = str[i];
-        int thisValue = (int) thisLetter;
+        //cout << "asc" << toascii(thisLetter);
+        int thisValue = (int) thisLetter;//fix this line maybe the probelm and use c++17 to comlie it
         letterTotal = letterTotal + thisValue;
     }
+
     // Scale letterTotal to fit in HASH_TABLE_SIZE.
     int hashCode = (letterTotal * 1) % HASH_TABLE_SIZE;  // % is the "mod" operator
     // TODO: Experiment with letterTotal * 2, 3, 5, 50, etc.
@@ -152,7 +155,7 @@ void analyzeHashValues(Queue hashValues) {
     cout << "Hash Table Usage:";
 
     // Sort the hash values.
-    Qsort(hashValues, 0, hashValues.size() - 1);  // This is a "dual-pivot" quicksort.
+    //Qsort(hashValues, 0, hashValues.size() - 1);  // This is a "dual-pivot" quicksort. was accidenlty sorting the has values
     int asteriskCount = 0;
     int bucketCount[HASH_TABLE_SIZE];
     int totalCount = 0;
@@ -162,7 +165,7 @@ void analyzeHashValues(Queue hashValues) {
         //printf("%03d ", i);
         // cout <<endl;
         asteriskCount = 0;
-        while ((arrayIndex < LINES_IN_FILE) && (hashValues.Get(arrayIndex) == i)) {//use the get function
+        while ((arrayIndex < LINES_IN_FILE)){ //&& (hashValues.Get(arrayIndex) == i)) {//use the get function  WAS casuing THE PROBELMS
             cout << "*";
             asteriskCount += 1;
             arrayIndex += 1;
@@ -234,9 +237,9 @@ int main() {
         cout << i;
         cout << ". " << magicItems.at(i) << " - ";
         hashCode = makeHashCode(magicItems.at(i));
-        printf("%03d%n", hashCode);
+        printf("%03d%n", hashCode);//use cout instead figure out what wrong. Remeber to compile c++ 17
         cout << endl;
-        hashValues.assign(i, hashCode);
+        hashValues.push_back(hashCode);
         queue.enqueue(hashCode);
     }
 
