@@ -6,3 +6,5 @@
 #define ASSIGNMENT_4_BINARY_H
 
 #endif //ASSIGNMENT_4_BINARY_H
+
+//My binary code just disappeared
