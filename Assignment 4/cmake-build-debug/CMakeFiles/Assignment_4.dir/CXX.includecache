@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.cpp
+Binary.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
+
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
+
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/main.cpp
+cstdlib
+-
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+list
+-
+graph
+-
+
