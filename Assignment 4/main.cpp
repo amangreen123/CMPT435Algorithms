@@ -46,7 +46,9 @@ int main(int argc, char** argv) {
     ifstream letterFile;
     string text;
     ifstream graphFile;
-    BinaryTree BT;
+    BinaryTree BST;
+    bool start = false;
+
     int numbers;
 
 
@@ -74,9 +76,10 @@ int main(int argc, char** argv) {
     }
     randomWord();
 
-
-    //BT.insert(randomWords);
-    //BT.search(randomWords);
+    //trying to call one or the other version of insert and search
+    // if you put 2 params (ranwords, words), it only wants the version with 1 param
+    // if you put 1 param (randwords), it only wants the version with 2 params
+    //BST.insert(randomWords);
 
 
     graphFile.open("graphs1.txt", ios::in);
@@ -90,7 +93,14 @@ int main(int argc, char** argv) {
         while (std::getline(graphFile, text)) {
 
             if(text.find("new graph") != std::string::npos){
-                insert(verList1);
+                start = true;
+
+                if(text.find("add vertex ")){
+                   // consider how we read in a whole line
+                   // read in the entire line (ex: add vertex 1)
+                   // then parse/split the line to grab the int
+                   graphs.push_back(text);
+               }
             }
 
         }

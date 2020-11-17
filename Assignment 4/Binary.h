@@ -18,16 +18,19 @@ struct BST{
     BST *left;
     BST *right;
 };
-BST* root;
+
 
 class BinaryTree{
 public:
     BinaryTree();
     ~BinaryTree();
+
     void insert(string key);
     BST *search(string key);
 
 private:
     void insert(string key, BST *leaf);
     BST *search(string key, BST *leaf);
+
+    BST* root;
 };

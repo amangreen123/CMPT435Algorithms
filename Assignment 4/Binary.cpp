@@ -15,17 +15,17 @@ void BinaryTree::insert(string key , BST *leaf) {
        if(leaf -> left != NULL)
            insert(key, leaf -> left);
        else{
-           leaf ->left = new BST;
-           leaf ->left -> words = key;
-           leaf -> left ->left = NULL;
-           leaf -> left ->right = NULL;
+           leaf -> left = new BST;
+           leaf -> left -> words = key;
+           leaf -> left -> left = NULL;
+           leaf -> left -> right = NULL;
        }
     }
     else if (key >= leaf -> words){
         if(leaf -> right != NULL)
             insert(key, leaf -> right);
         else{
-            leaf ->right = new BST;
+            leaf -> right = new BST;
             leaf -> right -> words = key;
             leaf -> right -> left = NULL;
             leaf -> right -> right = NULL;
@@ -34,7 +34,7 @@ void BinaryTree::insert(string key , BST *leaf) {
 
 }
 
-BST * BinaryTree::search(string key, BST *leaf) {
+BST *BinaryTree::search(string key, BST *leaf) {
     if(leaf != NULL){
         if(key == leaf -> words)
             return leaf;
@@ -57,7 +57,7 @@ void BinaryTree::insert(string key) {
     }
 }
 
-BST * BinaryTree::search(string key) {
+BST *BinaryTree::search(string key) {
     return search(key, root);
 }
 
