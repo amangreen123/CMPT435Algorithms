@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.cpp
-Binary.h
-C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
-
-C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
-
 C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/main.cpp
 cstdlib
 -
@@ -23,8 +17,10 @@ string
 -
 vector
 -
-list
+ctime
 -
-graph
+math.h
+-
+list
 -
 
