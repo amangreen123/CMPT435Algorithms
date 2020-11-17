@@ -30,16 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c812276-e772-43ef-a2e1-4a05ff7faaa7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GraphNode.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Binary.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Binary.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_4.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/Binary.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/Binary.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +109,7 @@
       <workItem from="1605218368866" duration="11000" />
       <workItem from="1605218410698" duration="1329000" />
       <workItem from="1605219768081" duration="2954000" />
-      <workItem from="1605509390199" duration="10800000" />
+      <workItem from="1605509390199" duration="13119000" />
     </task>
     <servers />
   </component>

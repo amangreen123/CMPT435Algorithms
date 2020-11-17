@@ -13,9 +13,21 @@ using namespace std;
 
 vector<string> words;
 vector<string> randomWords;
+vector<string> graphs;
+list<int> verList1;
 
+void insertEdge(list<int> verList1[], int u,int v){
+    verList1[u].push_back(v);
+    verList1[v].push_back(u);
+}
 
-
+void count_edges(list<int> verList1[],int v){
+    int count = 0;
+    for(int i = 0; i < v; i++){
+        count += verList1[i].size();
+    }
+    count = count/2;
+}
 
 
 void randomWord(){
@@ -38,8 +50,6 @@ int main(int argc, char** argv) {
     int numbers;
 
 
-    vector<string> graphs;
-    list<int> verList1;
     list<int> verList2;
     list<int> verList3;
     list<int> verList4;
@@ -78,8 +88,11 @@ int main(int argc, char** argv) {
 
     if (graphFile.is_open()) {
         while (std::getline(graphFile, text)) {
-            graphs.push_back(text);
-            //cout << text << "\n";
+
+            if(text.find("new graph") != std::string::npos){
+                insert(verList1);
+            }
+
         }
 
         graphFile.close();
