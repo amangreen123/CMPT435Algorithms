@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.cpp">
+			<Option target="Assignment_4"/>
+		</Unit>
+		<Unit filename="C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h">
+			<Option target="Assignment_4"/>
+		</Unit>
 		<Unit filename="C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.cpp">
 			<Option target="Assignment_4"/>
 		</Unit>

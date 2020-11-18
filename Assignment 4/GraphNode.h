@@ -7,13 +7,13 @@
 
 #endif //MAIN_CPP_GRAPHNODE_H
 
-struct Node{
+struct GNode{
     int data;
 };
 
 struct undirectedG{
     undirectedG* next;
-    Node* data;
+    GNode* data;
 };
 
 

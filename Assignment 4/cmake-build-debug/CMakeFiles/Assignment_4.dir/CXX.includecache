@@ -1,0 +1,68 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.cpp
+BinTree.h
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
+iostream
+-
+cstdlib
+-
+string
+-
+vector
+-
+set
+-
+
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
+iostream
+-
+cstdlib
+-
+string
+-
+vector
+-
+set
+-
+
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
+iostream
+-
+cstdlib
+-
+string
+-
+
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/GraphNode.h
+
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/main.cpp
+cstdlib
+-
+fstream
+-
+iostream
+-
+string
+-
+vector
+-
+ctime
+-
+math.h
+-
+list
+-
+Binary.h
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
+GraphNode.h
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/GraphNode.h
+BinTree.h
+C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
+

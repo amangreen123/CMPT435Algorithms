@@ -8,6 +8,7 @@
 #include <list>
 #include "Binary.h"
 #include "GraphNode.h"
+#include "BinTree.h"
 
 using namespace std;
 
@@ -43,7 +44,7 @@ void printFile() {
 }
 
 int main(int argc, char** argv) {
-    ifstream letterFile;
+    /*ifstream letterFile;
     string text;
     ifstream graphFile;
     BinaryTree BST;
@@ -107,16 +108,22 @@ int main(int argc, char** argv) {
 
         graphFile.close();
     }
-
-
-
-
-
+*/
     //int m =0;
    // while( m < graphs.size()){
      //   if(graphs.at(m)[4] == 'v' )
     //        verList1.push_back( graphs.at(m)[9]);
     //}
 
+    Node* root = newNode("scoop");
+    root->left = newNode("hhf");
+    root->right = newNode("ewegsdg");
+    root->right->left = newNode("dsgsgds");
+    root->left->left = newNode("sdgfsg");
+    root->left->right = newNode("pp");
+    root->right->right = newNode("aaaaa");
+    binaryTreeToBST(root);
+    cout << "Inorder traversal of BST is: " << endl;
+    inorder(root);
 
 }

@@ -13,7 +13,7 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:orign" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select />
@@ -29,7 +29,27 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c812276-e772-43ef-a2e1-4a05ff7faaa7" name="Default Changelist" comment="" />
+    <list default="true" id="3c812276-e772-43ef-a2e1-4a05ff7faaa7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BinTree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BinTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraphNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/GraphNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_4.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_4.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_4.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_4.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,14 +75,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug" />
-      <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aaron\OneDrive\Documents\GitHub\CMPT435Algorithms\Assignment 4" />
       <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4" />
       <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug" />
       <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug" />
+      <recent name="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4" />
     </key>
   </component>
   <component name="RunManager">
@@ -107,7 +128,7 @@
       <workItem from="1605218410698" duration="1329000" />
       <workItem from="1605219768081" duration="2954000" />
       <workItem from="1605509390199" duration="13119000" />
-      <workItem from="1605645807336" duration="4207000" />
+      <workItem from="1605645807336" duration="9566000" />
     </task>
     <servers />
   </component>
@@ -127,6 +148,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="343" y="89" key="#New_File_Extensions" timestamp="1605730093664">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="343" y="89" key="#New_File_Extensions/0.0.1536.824@0.0.1536.824" timestamp="1605730093664" />
     <state x="156" y="284" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605151186243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -135,26 +160,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="972" y="345" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605150400530" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605732093525">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605732093525" />
     <state x="693" y="179" key="FileChooserDialogImpl" timestamp="1605645849535">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="693" y="179" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605645849535" />
     <state x="866" y="226" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605509485828" />
-    <state width="1348" height="275" key="GridCell.Tab.0.bottom" timestamp="1605591000761">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1605735117044">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605735117044" />
     <state width="1348" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605591000761" />
-    <state width="1348" height="275" key="GridCell.Tab.0.center" timestamp="1605591000761">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1605735117044">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605735117044" />
     <state width="1348" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605591000761" />
-    <state width="1348" height="275" key="GridCell.Tab.0.left" timestamp="1605591000761">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1605735117044">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605735117044" />
     <state width="1348" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605591000761" />
-    <state width="1348" height="275" key="GridCell.Tab.0.right" timestamp="1605591000761">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1605735117044">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605735117044" />
     <state width="1348" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605591000761" />
     <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1605151231245">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(Assignment_4
         Binary.cpp
         Binary.h
-        main.cpp)
+        main.cpp BinTree.cpp BinTree.h)
