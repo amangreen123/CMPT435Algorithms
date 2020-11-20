@@ -44,15 +44,11 @@ void printFile() {
 }
 
 int main(int argc, char** argv) {
-    /*ifstream letterFile;
+    ifstream letterFile;
     string text;
     ifstream graphFile;
-    BinaryTree BST;
     bool start = false;
-
     int numbers;
-
-
     list<int> verList2;
     list<int> verList3;
     list<int> verList4;
@@ -67,15 +63,29 @@ int main(int argc, char** argv) {
     }
 
     if (letterFile.is_open()) {
+
         while (std::getline(letterFile, text)) {
             words.push_back(text);
-            cout << text << "\n";
-
         }
 
         letterFile.close();
     }
-    randomWord();
+
+randomWord();
+
+    for (int i = 0; i < randomWords.size(); i++){
+        Node* root = newNode(text);
+        root->left = newNode(text);
+        root->right = newNode(text);
+        root->right->left = newNode(text);
+        root->left->left = newNode(text);
+        root->left->right = newNode(text);
+        root->right->right = newNode(text);
+        binaryTreeToBST(root);
+        cout << "Inorder traversal of BST is: " << endl;
+        inorder(root);
+    }
+
 
     //trying to call one or the other version of insert and search
     // if you put 2 params (ranwords, words), it only wants the version with 1 param
@@ -83,7 +93,7 @@ int main(int argc, char** argv) {
     //BST.insert(randomWords);
 
 
-    graphFile.open("graphs1.txt", ios::in);
+  /*  graphFile.open("graphs1.txt", ios::in);
 
     if (!graphFile) {
         cout << "\n Error opening graph file";
@@ -107,14 +117,13 @@ int main(int argc, char** argv) {
         }
 
         graphFile.close();
-    }
-*/
+    }*/
     //int m =0;
    // while( m < graphs.size()){
      //   if(graphs.at(m)[4] == 'v' )
     //        verList1.push_back( graphs.at(m)[9]);
     //}
-
+/*
     Node* root = newNode("scoop");
     root->left = newNode("hhf");
     root->right = newNode("ewegsdg");
@@ -124,6 +133,6 @@ int main(int argc, char** argv) {
     root->right->right = newNode("aaaaa");
     binaryTreeToBST(root);
     cout << "Inorder traversal of BST is: " << endl;
-    inorder(root);
+    inorder(root);*/
 
 }
