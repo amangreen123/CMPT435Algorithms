@@ -14,7 +14,7 @@ using namespace std;
 
 vector<string> words;
 vector<string> randomWords;
-vector<string> graphs;
+vector<int> graphs;
 list<int> verList1;
 
 void insertEdge(list<int> verList1[], int u,int v){
