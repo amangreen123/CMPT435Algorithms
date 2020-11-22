@@ -1,7 +1,3 @@
-//
-// Created by aaron on 11/18/2020.
-//
-
 #include "BinTree.h"
 #include <iostream>
 #include <cstdlib>
@@ -13,34 +9,44 @@
 //
 
 
-void storeinorderInSet(Node* root, set<string>& s)
+void storeinorderInSet(Node* root, vector<string>& s)
 {
-    if (!root)
+    if (!root || s.size() == 0)
         return;
 
-    storeinorderInSet(root->left, s);
-    s.insert(root->data);
-    storeinorderInSet(root->right, s);
+    for (int i = 0; i < s.size(); i++) {
+            if (i + 1 < s.size()) {
+                storeinorderInSet(root->left, s);
+            } else {
+                storeinorderInSet(root->right, s);
+            }
+        }
 }
 
 
-void setToBST(set<string>& s, Node* root)
+void setToBST(vector<string>& s, Node* root)
 {
-    if (!root)
+    if (!root || s.size() == 0)
         return;
-
-    setToBST(s, root->left);
-
+for(int i = 0; i < s.size(); i++){
+    root->data = s[i];
     auto it = s.begin();
-
-    root->data = *it;
     s.erase(it);
-    setToBST(s, root->right);
+    if(i+1 < s.size()) {
+        if (s[i + 1] < root->data) {
+            setToBST(s, root->left);
+        } else {
+            setToBST(s, root->right);
+        }
+    }
+
+}
+
 }
 
 void binaryTreeToBST(Node* root)
 {
-    set<string> s;
+    vector<string> s;
 
     storeinorderInSet(root, s);
     setToBST(s, root);

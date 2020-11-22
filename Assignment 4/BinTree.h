@@ -20,8 +20,8 @@ struct Node {
     struct Node *left, *right;
 };
 
-void storeinorderInSet(Node* root, set<string>& s);
-void setToBST(set<string>& s, Node* root);
+void storeinorderInSet(Node* root, vector<string>& s);
+void setToBST(vector<string>& s, Node* root);
 void binaryTreeToBST(Node* root);
 void inorder(Node* root);
 Node* newNode(string data);
