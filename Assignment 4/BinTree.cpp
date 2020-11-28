@@ -7,6 +7,7 @@
 //
 // Created by aaron on 11/18/2020.
 //
+int comparison = 0;
 
 
 void storeinorderInSet(Node* root, vector<string>& s)
@@ -26,6 +27,8 @@ void storeinorderInSet(Node* root, vector<string>& s)
 
 void setToBST(vector<string>& s, Node* root)
 {
+
+
     if (!root || s.size() == 0)
         return;
 for(int i = 0; i < s.size(); i++){
@@ -35,9 +38,11 @@ for(int i = 0; i < s.size(); i++){
     if(i+1 < s.size()) {
         if (s[i + 1] < root->data) {
             setToBST(s, root->left);
+
         } else {
             setToBST(s, root->right);
         }
+
     }
 
 }
@@ -50,6 +55,7 @@ void binaryTreeToBST(Node* root)
 
     storeinorderInSet(root, s);
     setToBST(s, root);
+   // cout << root->data << " " << "\n" ;
 }
 
 Node* newNode(string data)
@@ -60,13 +66,31 @@ Node* newNode(string data)
     return temp;
 }
 
-void inorder(Node* root)
+void inorder(Node* root, Node* leftBound, Node* rightBound)
 {
     if (!root)
         return;
-    inorder(root->left);
-    cout << root->data << " ";
-    inorder(root->right);
+    if (root->data > leftBound->data) {
+        if (root->data < rightBound->data) {
+            cout << root->data << " " << "\n" ;
+            cout<< 0;
+        }
+        else if (root->data > rightBound->data){
+            cout << root->data << " " << "\n" ;
+           // inorder(rightBound);
+            cout<< 1;
+        }
+
+
+    }
+    else if (root < leftBound) {
+        cout << root->data << " " << "\n" ;
+      //  inorder(leftBound);
+        cout << 1;
+    }
+    else
+        cout << root->data << " " << "\n" ;
+    //inorder(root->right);
     //put number comparison
 }
 

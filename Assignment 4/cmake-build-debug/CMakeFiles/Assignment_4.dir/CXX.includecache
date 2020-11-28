@@ -35,6 +35,8 @@ fstream
 -
 iostream
 -
+sstream
+-
 string
 -
 vector

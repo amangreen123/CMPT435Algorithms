@@ -8,7 +8,8 @@
 #endif //MAIN_CPP_GRAPHNODE_H
 
 struct GNode{
-    int data;
+    int dest;
+    struct GNode* next;
 };
 
 struct undirectedG{
