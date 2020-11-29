@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
 iostream
 -
 cstdlib
@@ -18,17 +18,11 @@ vector
 set
 -
 
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
-iostream
--
-cstdlib
--
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/GraphNode.h
 string
 -
 
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/GraphNode.h
-
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/main.cpp
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/main.cpp
 cstdlib
 -
 fstream
@@ -49,10 +43,10 @@ list
 -
 map
 -
-Binary.h
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/Binary.h
+iomanip
+-
 GraphNode.h
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/GraphNode.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/GraphNode.h
 BinTree.h
-C:/Users/aaron/OneDrive/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 4/BinTree.h
 

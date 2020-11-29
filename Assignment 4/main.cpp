@@ -5,11 +5,12 @@
 #include<string>
 #include<vector>
 #include<ctime>
+#include "Queue.h"
 #include<math.h>
 #include <list>
 #include <map>
+#include<iomanip>
 
-#include "Binary.h"
 #include "GraphNode.h"
 #include "BinTree.h"
 
@@ -18,8 +19,8 @@ using namespace std;
 
 vector<string> words;
 vector<string> randomWords;
-vector<string> graphs;
-list<string> verList1;
+int count = 0;
+
 
 int parse(char x){
 
@@ -57,25 +58,62 @@ int parse(char x){
         default:
             return -1;
             break;
-
     }
 }
 
-void insertEdge(vector<string> graphs, string v1, string v2){
+/*
+class Graph{
 
-    int x1 = parse(v1[12]);
-    int x2 = parse(v2[12]);
-    graphs.push_back(v1);
-    graphs.push_back(v2);
-}
+    GNode* adjNode(int dest, GNode* head){
+        GNode* newNode = new GNode;
+        newNode -> vertex = dest;
 
-void count_edges(list<int> verList1[],int v){
-    int count = 0;
-    for(int i = 0; i < v; i++){
-        count += verList1[i].size();
+        newNode -> next = head;
+
+        return newNode;
     }
-    count = count/2;
-}
+
+    int N;
+
+public:
+    GNode **head;
+
+    Graph(undirectedG edges[], int n, int N){
+        head = new GNode*[N]();
+        this -> N = N;
+        for(int i = 0; i < N; i++)
+            head[i] = nullptr;
+
+        for(unsigned i = 0; i < n; i++){
+            string src = edges[i].src;
+            string dest = edges[i].dest;
+
+            GNode* newNode = adjNode(dest,head[src]);
+
+            head[src] = newNode;
+
+            newNode = adjNode(src,head[dest]);
+            head[dest] = newNode;
+        }
+
+    }
+    ~Graph(){
+        for (int i = 0; i < N; i++)
+            delete[] head[i];
+
+        delete[] head;
+    }
+
+    void printList(GNode* ptr){
+        while (ptr != nullptr)
+        {
+            cout << " -> " << ptr->vertex << " ";
+            ptr = ptr-> next;
+        }
+        cout << endl;
+    }
+};
+*/
 
 
 void randomWord(){
@@ -90,39 +128,37 @@ void printFile() {
     }
 }
 
- /*void child (string word){
-    Node *root = newNode(word);
 
-    inorder(root);
+/*void child (string word){
+   Node *root = newNode(word);
 
-     root->left = newNode(word);
-     root->right = newNode(word);
-     root->right->left = newNode(word);
-     root->left->left = newNode(word);
-     root->left->right = newNode(word);
-     root->right->right = newNode(word);
+   inorder(root);
 
-    binaryTreeToBST(root);
+    root->left = newNode(word);
+    root->right = newNode(word);
+    root->right->left = newNode(word);
+    root->left->left = newNode(word);
+    root->left->right = newNode(word);
+    root->right->right = newNode(word);
+
+   binaryTreeToBST(root);
 
 
 }
- */
+*/
+
+
 
 int main(int argc, char** argv) {
     ifstream letterFile;
     string text;
     ifstream graphFile;
+    Queue q;
     Node* rightBound;
     Node* leftBound;
 
     bool start = false;
     int numbers = 0;
-    GNode* g =  new GNode();
-
-    list<int> verList2;
-    list<int> verList3;
-    list<int> verList4;
-    list<int> verList5;
 
 
     letterFile.open("magicitems.txt", ios::in);
@@ -136,12 +172,12 @@ int main(int argc, char** argv) {
 
         while (std::getline(letterFile, text))
             words.push_back(text);
-    randomWord();
+        randomWord();
         for (int i = 1; i < 4; i++){
             Node* root = newNode(randomWords[i]);
             leftBound = newNode(randomWords[i-1]);
             rightBound = newNode(randomWords[i+1]);
-          //  binaryTreeToBST(root);
+            //  binaryTreeToBST(root);
             inorder(root, leftBound, rightBound);
         }
 
@@ -162,7 +198,7 @@ int main(int argc, char** argv) {
     //BST.insert(randomWords);
 
 
-  graphFile.open("graphs1.txt", ios::in);
+    graphFile.open("graphs1.txt", ios::in);
 
     if (!graphFile) {
         cout << "\n Error opening graph file";
@@ -171,63 +207,188 @@ int main(int argc, char** argv) {
 
     if (graphFile.is_open()) {
 
+        //read line by line
         while (std::getline(graphFile, text)) {
-           /* std::stoi(text);
-          char  gr =  text.at(text.size() - 1);
-         string number{gr};
-            text = numbers;*/
 
-            if(text.find("new graph") != std::string::npos){
-                vector<string>graph;
-                int count = 0;
-                for(; text.find("add vertex"); count++);
-                int arr[7][7];
-                for(int i = 0; i< 7 ;i++){
-                    for(int j = 0; j<7; j++){
-                        arr[i][j] = 0;
+            //ignore header line
+            std::getline(graphFile, text);
+
+            //start a new graph
+            if (text.find("new graph") != std::string::npos) {
+
+                vector<string> vecVertex;
+                vector<string> vecEdges;
+
+                while (std::getline(graphFile, text)) {
+
+                    if (text == "") {
+                        break;
+                    }
+                    if (text.find("add edge") != std::string::npos) {//"add edge"
+                        vecEdges.push_back(text);
+                    }
+                    else {
+                        vecVertex.push_back(text);
                     }
                 }
-                count  = 0;
-                if(text.find("add edge")){
-                    int i = parse(text[10]) - 1;
-                    int j = parse(text[14]) - 1;
-                    arr[i][j] = 1;
-                    arr[j][i] = 1;
-                    g->dest = i;
-                    g->next->dest = j;
-                    g->dest = j;
-                    g->next->dest = i;
-                    cout << g;
+
+                //graph:	 1. as	a	matrix
+                int numVertices = vecVertex.size() + 1;
+
+                int** matrix = new int* [numVertices];
+                for (int i = 0; i < numVertices; i++) {
+                    matrix[i] = new int[numVertices];
                 }
-                //add_edge(adj_list, parse(text[10]), parse(text[14]));
-                //if(arr[1][2] == 1)
-                    //connected or no edge
-                    //else
-                        //not connected or no edge
-                insertEdge(graphs,"add vertex 1","add vertex 2");
+
+                //reset matrix
+                for (int i = 0; i < numVertices; i++) {
+                    for (int j = 0; j < numVertices; j++) {
+                        matrix[i][j] = 0;
+                    }
+                }
+
+                //set the edges
+                for (int i = 0; i < vecEdges.size(); i++) {
+
+                    string edge = vecEdges[i].substr(9);//example add edge 1 - 2 -> get substring 1 - 2
+                    stringstream ss(edge);
+
+                    int fromVertex = 0;
+                    int toVertex = 0;
+                    string temp = ""; //such as -
+
+                    ss >> fromVertex >> temp >> toVertex;
+                    matrix[fromVertex][toVertex] = 1; //from vertex and to vertex is 0-based
+                    matrix[toVertex][fromVertex] = 1; //undirected graph
+                }
+
+                //print matrix
+                cout << "Matrix" << endl;
+                for (int i = 0; i < numVertices; i++) {
+                    for (int j = 0; j < numVertices; j++) {
+                        cout << setw(2) << matrix[i][j];
+                    }
+                    cout << endl;
+                }
+
+                //free matrix
+                for (int i = 0; i < numVertices; i++) {
+                    delete[] matrix[i];
+                }
+                delete[] matrix;
+                cout << endl << endl;
+
+                //adjacency List
+                GNode** nodeList = new GNode*[numVertices];
+                for (int i = 0; i < numVertices; i++) {
+                    nodeList[i] = new GNode();
+                    nodeList[i]->vertex = i;
+                    nodeList[i]->next = NULL;
+                }
+                /*
+                GNode[0] -> NULL
+                GNode[1] -> NULL
+                GNode[2] -> NULL
+                GNode[3] -> NULL
+                GNode[4] -> NULL
+                GNode[5] -> NULL
+                */
+
+                for (int i = 0; i < vecEdges.size(); i++) {
+
+                    string edge = vecEdges[i].substr(9);//example add edge 1 - 2 -> get substring 1 - 2
+                    stringstream ss(edge);
+
+                    int fromVertex = 0;
+                    int toVertex = 0;
+                    string temp = ""; //such as -
+
+                    ss >> fromVertex >> temp >> toVertex;
+
+                    //retrive vertices by indices
+                    GNode* fromNode = nodeList[fromVertex];
+                    GNode* toNode = nodeList[toVertex];
+
+                    //move to tail node of linked list fromNode
+                    while (fromNode->next != NULL){
+                        fromNode = fromNode->next;
+                    }
+                    //then add a new node to tail
+                    fromNode->next = new GNode();
+                    fromNode->next->vertex = toVertex;
+                    fromNode->next->next = NULL; //fromNode->next points to new node, so fromNode->next->next is point to next node from now node
+
+                    //move to tail node of linked list toNode
+                    while (toNode->next != NULL){
+                        toNode = toNode->next;
+                    }
+                    //then add a new node to tail
+                    toNode->next = new GNode();
+                    toNode->next->vertex = fromVertex;
+                    toNode->next->next = NULL; //toNode->next points to new node, so toNode->next->next is point to next node from now node
+
+                    /*
+                     example: if add edge 1 - 2, the adjacency list is
+
+                     GNode[0] -> NULL
+                     GNode[1] -> GNode[2] -> NULL
+                     GNode[2] -> GNode[1] -> NULL
+                     GNode[3] -> NULL
+                     GNode[4] -> NULL
+                     GNode[5] -> NULL
+                   */
+                }
+
+                //print the adjacency List
+                cout << "Adjacency List" << endl;
+                for (int i = 0; i < numVertices; i++) {
+
+                    //current points to the head of linked list at [i]
+                    GNode* current = nodeList[i];
+                    cout << "Vertex " << i;
+
+                    //iterate based on edges
+                    current = current->next;
+                    while (current != NULL){
+                        cout << " -> Vertex " << current->vertex;
+                        current = current->next;
+                    }
+                    cout << endl;
+                }
+
+                //free resource
+                for (int i = 0; i < numVertices; i++) {
+
+                    //current points to the head of linked list at [i]
+                    GNode* current = nodeList[i];
+                    GNode* temp;
+
+                    //iterate the linked list and delete node
+                    while (current != NULL){
+                        temp = current;
+                        current = current->next;
+                        delete temp;
+                    }
+                }
+                delete[] nodeList;
+                cout << endl << endl;
 
             }
 
         }
 
-        graphFile.close();
     }
 
-    //int m =0;
-   // while( m < graphs.size()){
-     //   if(graphs.at(m)[4] == 'v' )
-    //        verList1.push_back( graphs.at(m)[9]);
-    //}
-
-    /*Node* root = newNode("scoop");
-    root->left = newNode("hhf");
-    root->right = newNode("ewegsdg");
-    root->right->left = newNode("dsgsgds");
-    root->left->left = newNode("sdgfsg");
-    root->left->right = newNode("pp");
-    root->right->right = newNode("aaaaa");
-    binaryTreeToBST(root);
-    cout << "Inorder traversal of BST is: " << endl;
-    inorder(root);*/
-
+    graphFile.close();
 }
+
+/*Node* root = newNode("scoop");
+root->left = newNode("hhf");
+root->right = newNode("ewegsdg");
+root->right->left = newNode("dsgsgds");
+root->left->left = newNode("sdgfsg");
+root->left->right = newNode("pp");
+root->right->right = newNode("aaaaa");
+binaryTreeToBST(root);
+cout << "Inorder traversal of BST is: " << endl;
+inorder(root);*/

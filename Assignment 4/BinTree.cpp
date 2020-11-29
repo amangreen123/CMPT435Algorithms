@@ -73,20 +73,15 @@ void inorder(Node* root, Node* leftBound, Node* rightBound)
     if (root->data > leftBound->data) {
         if (root->data < rightBound->data) {
             cout << root->data << " " << "\n" ;
-            cout<< 0;
         }
         else if (root->data > rightBound->data){
             cout << root->data << " " << "\n" ;
            // inorder(rightBound);
-            cout<< 1;
         }
-
-
     }
     else if (root < leftBound) {
         cout << root->data << " " << "\n" ;
       //  inorder(leftBound);
-        cout << 1;
     }
     else
         cout << root->data << " " << "\n" ;
