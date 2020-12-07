@@ -4,10 +4,8 @@
 CMakeFiles/Assignment_4.dir/BinTree.cpp.obj: ../BinTree.cpp
 CMakeFiles/Assignment_4.dir/BinTree.cpp.obj: ../BinTree.h
 
-CMakeFiles/Assignment_4.dir/Binary.cpp.obj: ../Binary.cpp
-CMakeFiles/Assignment_4.dir/Binary.cpp.obj: ../Binary.h
-
 CMakeFiles/Assignment_4.dir/main.cpp.obj: ../BinTree.h
 CMakeFiles/Assignment_4.dir/main.cpp.obj: ../GraphNode.h
+CMakeFiles/Assignment_4.dir/main.cpp.obj: ../Queue.h
 CMakeFiles/Assignment_4.dir/main.cpp.obj: ../main.cpp
 

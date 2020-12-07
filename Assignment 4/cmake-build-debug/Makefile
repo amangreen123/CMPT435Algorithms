@@ -169,33 +169,6 @@ BinTree.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_4.dir\build.make CMakeFiles/Assignment_4.dir/BinTree.cpp.s
 .PHONY : BinTree.cpp.s
 
-Binary.obj: Binary.cpp.obj
-
-.PHONY : Binary.obj
-
-# target to build an object file
-Binary.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_4.dir\build.make CMakeFiles/Assignment_4.dir/Binary.cpp.obj
-.PHONY : Binary.cpp.obj
-
-Binary.i: Binary.cpp.i
-
-.PHONY : Binary.i
-
-# target to preprocess a source file
-Binary.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_4.dir\build.make CMakeFiles/Assignment_4.dir/Binary.cpp.i
-.PHONY : Binary.cpp.i
-
-Binary.s: Binary.cpp.s
-
-.PHONY : Binary.s
-
-# target to generate assembly for a file
-Binary.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_4.dir\build.make CMakeFiles/Assignment_4.dir/Binary.cpp.s
-.PHONY : Binary.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -235,9 +208,6 @@ help:
 	@echo ... BinTree.obj
 	@echo ... BinTree.i
 	@echo ... BinTree.s
-	@echo ... Binary.obj
-	@echo ... Binary.i
-	@echo ... Binary.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -76,24 +76,10 @@ include CMakeFiles/Assignment_4.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Assignment_4.dir/flags.make
 
-CMakeFiles/Assignment_4.dir/Binary.cpp.obj: CMakeFiles/Assignment_4.dir/flags.make
-CMakeFiles/Assignment_4.dir/Binary.cpp.obj: CMakeFiles/Assignment_4.dir/includes_CXX.rsp
-CMakeFiles/Assignment_4.dir/Binary.cpp.obj: ../Binary.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Assignment_4.dir/Binary.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Assignment_4.dir\Binary.cpp.obj -c "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\Binary.cpp"
-
-CMakeFiles/Assignment_4.dir/Binary.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Assignment_4.dir/Binary.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\Binary.cpp" > CMakeFiles\Assignment_4.dir\Binary.cpp.i
-
-CMakeFiles/Assignment_4.dir/Binary.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Assignment_4.dir/Binary.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\Binary.cpp" -o CMakeFiles\Assignment_4.dir\Binary.cpp.s
-
 CMakeFiles/Assignment_4.dir/main.cpp.obj: CMakeFiles/Assignment_4.dir/flags.make
 CMakeFiles/Assignment_4.dir/main.cpp.obj: CMakeFiles/Assignment_4.dir/includes_CXX.rsp
 CMakeFiles/Assignment_4.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment_4.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Assignment_4.dir/main.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Assignment_4.dir\main.cpp.obj -c "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\main.cpp"
 
 CMakeFiles/Assignment_4.dir/main.cpp.i: cmake_force
@@ -107,7 +93,7 @@ CMakeFiles/Assignment_4.dir/main.cpp.s: cmake_force
 CMakeFiles/Assignment_4.dir/BinTree.cpp.obj: CMakeFiles/Assignment_4.dir/flags.make
 CMakeFiles/Assignment_4.dir/BinTree.cpp.obj: CMakeFiles/Assignment_4.dir/includes_CXX.rsp
 CMakeFiles/Assignment_4.dir/BinTree.cpp.obj: ../BinTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Assignment_4.dir/BinTree.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Assignment_4.dir/BinTree.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Assignment_4.dir\BinTree.cpp.obj -c "C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\BinTree.cpp"
 
 CMakeFiles/Assignment_4.dir/BinTree.cpp.i: cmake_force
@@ -120,21 +106,19 @@ CMakeFiles/Assignment_4.dir/BinTree.cpp.s: cmake_force
 
 # Object files for target Assignment_4
 Assignment_4_OBJECTS = \
-"CMakeFiles/Assignment_4.dir/Binary.cpp.obj" \
 "CMakeFiles/Assignment_4.dir/main.cpp.obj" \
 "CMakeFiles/Assignment_4.dir/BinTree.cpp.obj"
 
 # External object files for target Assignment_4
 Assignment_4_EXTERNAL_OBJECTS =
 
-Assignment_4.exe: CMakeFiles/Assignment_4.dir/Binary.cpp.obj
 Assignment_4.exe: CMakeFiles/Assignment_4.dir/main.cpp.obj
 Assignment_4.exe: CMakeFiles/Assignment_4.dir/BinTree.cpp.obj
 Assignment_4.exe: CMakeFiles/Assignment_4.dir/build.make
 Assignment_4.exe: CMakeFiles/Assignment_4.dir/linklibs.rsp
 Assignment_4.exe: CMakeFiles/Assignment_4.dir/objects1.rsp
 Assignment_4.exe: CMakeFiles/Assignment_4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Assignment_4.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\aaron\Documents\GitHub\CMPT435Algorithms\Assignment 4\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Assignment_4.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Assignment_4.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

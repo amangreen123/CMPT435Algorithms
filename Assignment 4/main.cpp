@@ -17,9 +17,8 @@
 
 using namespace std;
 
-vector<string> words;
+
 vector<string> randomWords;
-int count = 0;
 
 
 int parse(char x){
@@ -59,106 +58,29 @@ int parse(char x){
             return -1;
             break;
     }
-}
+}//Find an alternative to parisng after doing some research
 
-/*
-class Graph{
-
-    GNode* adjNode(int dest, GNode* head){
-        GNode* newNode = new GNode;
-        newNode -> vertex = dest;
-
-        newNode -> next = head;
-
-        return newNode;
-    }
-
-    int N;
-
-public:
-    GNode **head;
-
-    Graph(undirectedG edges[], int n, int N){
-        head = new GNode*[N]();
-        this -> N = N;
-        for(int i = 0; i < N; i++)
-            head[i] = nullptr;
-
-        for(unsigned i = 0; i < n; i++){
-            string src = edges[i].src;
-            string dest = edges[i].dest;
-
-            GNode* newNode = adjNode(dest,head[src]);
-
-            head[src] = newNode;
-
-            newNode = adjNode(src,head[dest]);
-            head[dest] = newNode;
-        }
-
-    }
-    ~Graph(){
-        for (int i = 0; i < N; i++)
-            delete[] head[i];
-
-        delete[] head;
-    }
-
-    void printList(GNode* ptr){
-        while (ptr != nullptr)
-        {
-            cout << " -> " << ptr->vertex << " ";
-            ptr = ptr-> next;
-        }
-        cout << endl;
-    }
-};
-*/
-
-
-void randomWord(){
-    srand(time(0));
-    for(int i = 0; i < 42; i++){
-        randomWords.push_back(words.at(rand() % 665));
-    }
-}
 void printFile() {
     for (int i = 0; i < randomWords.size() - 1; i++) {
         cout << randomWords[i] << "\n";
     }
+    //checked I was getting random words
 }
 
 
-/*void child (string word){
-   Node *root = newNode(word);
-
-   inorder(root);
-
-    root->left = newNode(word);
-    root->right = newNode(word);
-    root->right->left = newNode(word);
-    root->left->left = newNode(word);
-    root->left->right = newNode(word);
-    root->right->right = newNode(word);
-
-   binaryTreeToBST(root);
-
-
-}
-*/
-
-
+//linked object that represents a vertex in graph
+class LinkedObject{
+public:
+    int id;
+    bool processed;
+    vector<int> neighbors;
+};
 
 int main(int argc, char** argv) {
     ifstream letterFile;
     string text;
     ifstream graphFile;
-    Queue q;
-    Node* rightBound;
-    Node* leftBound;
-
-    bool start = false;
-    int numbers = 0;
+    vector<string> sentences;
 
 
     letterFile.open("magicitems.txt", ios::in);
@@ -169,28 +91,23 @@ int main(int argc, char** argv) {
     }
 
     if (letterFile.is_open()) {
-
-        while (std::getline(letterFile, text))
-            words.push_back(text);
-        randomWord();
-        for (int i = 1; i < 4; i++){
-            Node* root = newNode(randomWords[i]);
-            leftBound = newNode(randomWords[i-1]);
-            rightBound = newNode(randomWords[i+1]);
-            //  binaryTreeToBST(root);
-            inorder(root, leftBound, rightBound);
+        BinaryTree tree;
+        while (std::getline(letterFile, text)) {
+            sentences.push_back(text);
+            tree.add(text);
         }
-
+        int total = 0;
+        for(int i = 0 ; i < 42 ; i++) {
+            string word = sentences[ rand() % sentences.size() ];
+            if(tree.find(word)) {
+                total += tree.getComparisons();
+                cout << "Found " << word << " After " << tree.getComparisons() << " lookups " << endl;
+            }
+        }
+        cout << "Average lookups " << total / 42.0 << endl;
     }
 
 
-
-    letterFile.close();
-
-    //randomWord();
-    //  printFile();
-
-    cout << "Inorder traversal of BST is: " << endl;
 
     //trying to call one or the other version of insert and search
     // if you put 2 params (ranwords, words), it only wants the version with 1 param
@@ -373,6 +290,86 @@ int main(int argc, char** argv) {
                 delete[] nodeList;
                 cout << endl << endl;
 
+                LinkedObject* linkedObjectGraph = new LinkedObject[numVertices + 1];
+                for (int i = 0; i < numVertices + 1; i++) {
+                    linkedObjectGraph[i].id = i;
+                }
+
+                //linked Objects graph
+                for (int i = 0; i < vecEdges.size(); i++) {
+
+                    string edge = vecEdges[i].substr(9);//example add edge 1 - 2 -> get substring 1 - 2
+                    stringstream ss(edge);
+                    int fromVertex = 0;
+                    int toVertex = 0;
+                    string temp = "";
+                    ss >> fromVertex >> temp >> toVertex;
+
+                    linkedObjectGraph[fromVertex].neighbors.push_back(toVertex);
+                    linkedObjectGraph[toVertex].neighbors.push_back(fromVertex);
+                }
+
+                //do the breath first search
+                //use Queue
+                cout << "Breath First Search for Linked Objects - Graph" << endl;
+
+                for (int v = 0; v < numVertices + 1; v++) {
+                    for (int i = 0; i < numVertices + 1; i++) {
+                        linkedObjectGraph[i].processed = false;
+                    }
+
+                    cout << "Breath First Search for Linked Objects - From vertex " << v << endl;
+
+                    int start = v; //start by vertex v
+                    Queue q;
+                    q.enqueue(start);
+
+                    while (!q.emptyQueue()) {
+                        int current = q.dequeue();
+                        cout << current <<endl;
+
+
+                        //check the neighbors of current
+                        for (int i = 0; i < linkedObjectGraph[current].neighbors.size(); i++) {
+                            if (!linkedObjectGraph[linkedObjectGraph[current].neighbors[i]].processed) {
+                                linkedObjectGraph[linkedObjectGraph[current].neighbors[i]].processed = true;
+                                q.enqueue(linkedObjectGraph[current].neighbors[i]);
+                            }
+                        }
+                    }
+                }
+
+                //depth first search
+                //use Queue
+                cout << "Depth First Search for Linked Objects - Graph" << endl;
+
+                for (int v = 0; v < numVertices + 1; v++) {
+                    for (int i = 0; i < numVertices + 1; i++) {
+                        linkedObjectGraph[i].processed = false;
+                    }
+
+                    cout << "Depth First Search for Linked Objects - From vertex " << v << endl;
+
+                    int start = v; //start by vertex v
+                    vector<int> intStack; //used vector as stack, push to end and pop from and
+                    intStack.push_back(start);
+
+                    while (!intStack.empty()) {
+                        int current = intStack[intStack.size() - 1];
+                        intStack.pop_back();
+                        cout << current << endl;
+
+                        //check the neighbors of current
+                        for (int i = 0; i < linkedObjectGraph[current].neighbors.size(); i++) {
+                            if (!linkedObjectGraph[linkedObjectGraph[current].neighbors[i]].processed) {
+                                linkedObjectGraph[linkedObjectGraph[current].neighbors[i]].processed = true;
+                                intStack.push_back(linkedObjectGraph[current].neighbors[i]);
+                            }
+                        }
+                    }
+                }
+
+                delete [] linkedObjectGraph; // help saves memory
             }
 
         }
@@ -380,15 +377,5 @@ int main(int argc, char** argv) {
     }
 
     graphFile.close();
+    exit(0);
 }
-
-/*Node* root = newNode("scoop");
-root->left = newNode("hhf");
-root->right = newNode("ewegsdg");
-root->right->left = newNode("dsgsgds");
-root->left->left = newNode("sdgfsg");
-root->left->right = newNode("pp");
-root->right->right = newNode("aaaaa");
-binaryTreeToBST(root);
-cout << "Inorder traversal of BST is: " << endl;
-inorder(root);*/

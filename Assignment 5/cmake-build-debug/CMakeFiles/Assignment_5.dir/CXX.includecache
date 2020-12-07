@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Graph.h
+
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/main.cpp
+iostream
+-
+cstdlib
+-
+fstream
+-
+iostream
+-
+sstream
+-
+iomanip
+-
+vector
+-
+algorithm
+-
+Graph.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Graph.h
+
