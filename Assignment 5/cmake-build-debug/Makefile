@@ -142,6 +142,33 @@ Assignment_5/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/build
 .PHONY : Assignment_5/fast
 
+KnapSack.obj: KnapSack.cpp.obj
+
+.PHONY : KnapSack.obj
+
+# target to build an object file
+KnapSack.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/KnapSack.cpp.obj
+.PHONY : KnapSack.cpp.obj
+
+KnapSack.i: KnapSack.cpp.i
+
+.PHONY : KnapSack.i
+
+# target to preprocess a source file
+KnapSack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/KnapSack.cpp.i
+.PHONY : KnapSack.cpp.i
+
+KnapSack.s: KnapSack.cpp.s
+
+.PHONY : KnapSack.s
+
+# target to generate assembly for a file
+KnapSack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/KnapSack.cpp.s
+.PHONY : KnapSack.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -178,6 +205,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Assignment_5
+	@echo ... KnapSack.obj
+	@echo ... KnapSack.i
+	@echo ... KnapSack.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

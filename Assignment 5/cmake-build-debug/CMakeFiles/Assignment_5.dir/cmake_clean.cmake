@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "Assignment_5.exe"
   "Assignment_5.exe.manifest"
   "Assignment_5.pdb"
+  "CMakeFiles/Assignment_5.dir/KnapSack.cpp.obj"
   "CMakeFiles/Assignment_5.dir/main.cpp.obj"
   "libAssignment_5.dll.a"
 )

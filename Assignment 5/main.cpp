@@ -85,7 +85,7 @@ int main() {
     string text;
     ifstream graphFile;
     ifstream spice;
-    string knapSack;
+    string knapText;
 
     graphFile.open("graphs2.txt", ios::in);
     //    spice.open("spice.txt", ios::in);
@@ -321,6 +321,23 @@ GNode[5] -> NULL
         }
     }
 
+    while (spice.is_open()){
+
+        while (std::getline(spice, knapText)) {
+            vector<string> SpiceName;
+            vector<string> SpricePrice;
+
+            if (text == "") {
+                break;
+            }
+            if (text.find("Spice Name") != std::string::npos) {//"add edge"
+                SpiceName.push_back(knapText);
+            }
+            if (text.find("Total Price ") != std::string::npos) {//"add vertex"
+                SpricePrice.push_back(text);
+            }
+        }
+    }
     spice.close();
     graphFile.close();
     return 0;

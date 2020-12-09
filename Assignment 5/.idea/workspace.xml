@@ -30,48 +30,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0621083-2ce3-4e80-b3fe-e5372898d3ff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/KnapSack.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KnapSack.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assignment 4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Assignment 4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_5.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_5.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/linklibs.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/objects.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/objects1.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/Semester_Project.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/Semester_Project.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Semester Project/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Assignment_5.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Assignment_5.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Assignment_5.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Semester Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -103,9 +76,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Assignment_5" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Assignment_5" TARGET_NAME="Assignment_5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Assignment_5" RUN_TARGET_NAME="Assignment_5">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -122,6 +105,7 @@
       <workItem from="1607369084765" duration="5461000" />
       <workItem from="1607400894803" duration="241000" />
       <workItem from="1607401266228" duration="7000" />
+      <workItem from="1607474311421" duration="2090000" />
     </task>
     <servers />
   </component>
@@ -145,22 +129,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1196" y="303" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607401269405" />
-    <state width="1353" height="269" key="GridCell.Tab.0.bottom" timestamp="1607401137346">
+    <state width="1353" height="269" key="GridCell.Tab.0.bottom" timestamp="1607474351629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1353" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607401137346" />
-    <state width="1353" height="269" key="GridCell.Tab.0.center" timestamp="1607401137346">
+    <state width="1353" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607474351629" />
+    <state width="1353" height="269" key="GridCell.Tab.0.center" timestamp="1607474351629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1353" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607401137346" />
-    <state width="1353" height="269" key="GridCell.Tab.0.left" timestamp="1607401137346">
+    <state width="1353" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607474351629" />
+    <state width="1353" height="269" key="GridCell.Tab.0.left" timestamp="1607474351629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1353" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607401137346" />
-    <state width="1353" height="269" key="GridCell.Tab.0.right" timestamp="1607401137346">
+    <state width="1353" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607474351629" />
+    <state width="1353" height="269" key="GridCell.Tab.0.right" timestamp="1607474351629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1353" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607401137346" />
+    <state width="1353" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607474351629" />
     <state width="1353" height="305" key="GridCell.Tab.1.bottom" timestamp="1607221379788">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

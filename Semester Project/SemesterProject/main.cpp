@@ -84,6 +84,7 @@ void simulation(vector<bool>&groupSize, int size){
         float caseProb = cases[i] / numGroups;
         cout << "Case (" << (i + 1) << "): " << numGroups << " x " << caseProb << " = " << (numGroups * caseProb) << " instances requiring " << numTests[i] << " tests" << endl;
     }
+    cout << numTests[0] + numTests[1] + numTests[2] << " " << "of Test Required" << " "  << " " << "to screen a population of" << " " << groupSize.size();
 };
 
 
