@@ -169,6 +169,33 @@ KnapSack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/KnapSack.cpp.s
 .PHONY : KnapSack.cpp.s
 
+Spice.obj: Spice.cpp.obj
+
+.PHONY : Spice.obj
+
+# target to build an object file
+Spice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/Spice.cpp.obj
+.PHONY : Spice.cpp.obj
+
+Spice.i: Spice.cpp.i
+
+.PHONY : Spice.i
+
+# target to preprocess a source file
+Spice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/Spice.cpp.i
+.PHONY : Spice.cpp.i
+
+Spice.s: Spice.cpp.s
+
+.PHONY : Spice.s
+
+# target to generate assembly for a file
+Spice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Assignment_5.dir\build.make CMakeFiles/Assignment_5.dir/Spice.cpp.s
+.PHONY : Spice.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -208,6 +235,9 @@ help:
 	@echo ... KnapSack.obj
 	@echo ... KnapSack.i
 	@echo ... KnapSack.s
+	@echo ... Spice.obj
+	@echo ... Spice.i
+	@echo ... Spice.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

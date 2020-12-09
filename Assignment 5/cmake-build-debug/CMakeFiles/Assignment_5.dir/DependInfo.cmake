@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/KnapSack.cpp" "C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/cmake-build-debug/CMakeFiles/Assignment_5.dir/KnapSack.cpp.obj"
+  "C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Spice.cpp" "C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/cmake-build-debug/CMakeFiles/Assignment_5.dir/Spice.cpp.obj"
   "C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/main.cpp" "C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/cmake-build-debug/CMakeFiles/Assignment_5.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

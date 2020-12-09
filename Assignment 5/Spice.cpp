@@ -5,38 +5,30 @@
 #include "Spice.h"
 
 
-Spice::Spice(){
+Spice::Spice() {
     name = "";
-    Value = -1;
+    value = -1;
     quantity = -1;
-    next = nullptr;
 
 };
 
-Spice::Spice(string N, int Q, int V){
+Spice::Spice(string N, float V, int Q) {
     name = N;
     quantity = Q;
-    Value = V;
-    next = NULL;
+    value = V;
 };
 
 
-void Spice::setSpice(Spice* next){
-    next = next;
-};
-
-
-
-string Spice::getName(){
+string Spice::getName() {
     return name;
 };
 
 
-int Spice::getValue(){
-    return Value;
+float Spice::getValue() {
+    return value;
 };
 
 
-int Spice::getQuanity(){
+int Spice::getQuantity() {
     return quantity;
 };

@@ -86,6 +86,12 @@
 		<Unit filename="C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/KnapSack.h">
 			<Option target="Assignment_5"/>
 		</Unit>
+		<Unit filename="C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Spice.cpp">
+			<Option target="Assignment_5"/>
+		</Unit>
+		<Unit filename="C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Spice.h">
+			<Option target="Assignment_5"/>
+		</Unit>
 		<Unit filename="C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/main.cpp">
 			<Option target="Assignment_5"/>
 		</Unit>

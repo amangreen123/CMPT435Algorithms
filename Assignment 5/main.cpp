@@ -4,14 +4,16 @@
 #include<iostream>
 #include<sstream>
 #include<iomanip>
+#include<string>
 #include<vector>
 #include <algorithm>
 #include "Graph.h"
-
+#include "KnapSack.h"
+#include "Spice.h"
 using namespace std;
 
 
-class LinkedObject{
+class LinkedObject {
 
 public:
     int id;
@@ -22,14 +24,14 @@ public:
 };
 //used pairs one as the const and the other one as the actual path to follow
 // The first value pair is cost the second is the actual path
-pair<int,vector<int>>* BellmanFord(LinkedObject* graph, int numVertices){
+pair<int, vector<int>>* BellmanFord(LinkedObject* graph, int numVertices) {
     int start = 0;
     vector<string> vecEdges;
     int* distance = new int[numVertices];
     int* parent = new int[numVertices];
     int infinity = 1000000000;
 
-    for (int i = 0; i < numVertices;i++) {
+    for (int i = 0; i < numVertices; i++) {
         distance[i] = infinity;
         parent[i] = -1;
     }
@@ -42,43 +44,63 @@ pair<int,vector<int>>* BellmanFord(LinkedObject* graph, int numVertices){
             for (int index = 0; index < graph[v].neighbors.size(); index++) {
                 int adj = graph[v].neighbors[index];
                 int w = graph[v].weights[index];
-                if (distance[adj] > distance[v] + w){
+                if (distance[adj] > distance[v] + w) {
                     distance[adj] = distance[v] + w;
                     parent[adj] = v;
                 }
             }
         }
     }
-    pair<int,vector<int>>* shortest_paths = new pair<int,vector<int>>[numVertices];
-    for (int i = 0; i < numVertices; i++){
+    pair<int, vector<int>>* shortest_paths = new pair<int, vector<int>>[numVertices];
+    for (int i = 0; i < numVertices; i++) {
         shortest_paths[i].first = distance[i];
         int v = i;
-        while (v != -1){
+        while (v != -1) {
             shortest_paths[i].second.push_back(v);
             v = parent[v];
         }
-        reverse(shortest_paths[i].second.begin(),shortest_paths[i].second.end());
+        reverse(shortest_paths[i].second.begin(), shortest_paths[i].second.end());
     }
     return shortest_paths;
 }
 
-/*void InSort(){
-//i selected element
-//j insert element
-int i,j;
-string key;
-for(i = 0; i < words.size(); i++){
-key = words[i];
-j = i -1;
-while(j >= 0 && compare_String(words[j],key) > 0){
-words[j+1] = words[j];
---j;
-}
-words[j+1] = key;
+//example: spice name = red;    total_price =  4.0;  qty = 4;
+Spice extractSpice(string line){
+
+    string name;
+    float value;
+    int quantity;
+    string temp;
+
+    stringstream ss(line);
+
+    //extract name
+    getline(ss, temp, ';');
+    name = temp.substr(13);
+
+    //extract value
+    getline(ss, temp, ';');
+    while (temp[0] == ' ')
+    {
+        temp = temp.substr(1);
+    }
+    temp = temp.substr(13);
+    stringstream ssCost(temp);
+    ssCost >> value;
+
+    //extract quantity
+    getline(ss, temp, ';');
+    temp = temp.substr(8);
+    stringstream ssQuan(temp);
+    ssQuan >> quantity;
+
+    return Spice(name, value, quantity);
 }
 
-}*/
-
+bool compareSpice(Spice s1, Spice s2)
+{
+    return s1.getValue() > s2.getValue();
+}
 
 int main() {
 
@@ -88,7 +110,7 @@ int main() {
     string knapText;
 
     graphFile.open("graphs2.txt", ios::in);
-    //    spice.open("spice.txt", ios::in);
+    spice.open("spice.txt", ios::in);
 
     if (!spice) {
         cout << "\n Error opening spice file";
@@ -98,6 +120,56 @@ int main() {
     if (!graphFile) {
         cout << "\n Error opening graph file";
         exit(0);
+    }
+
+    //read spice file
+    vector<Spice> spices;
+    vector<int> knapsackCapacities;
+
+    if (spice.is_open()) {
+
+        while (std::getline(spice, knapText)) {
+
+            if (knapText == "") {
+                continue;
+            }
+            if (knapText.find("spice name") != std::string::npos) {
+                spices.push_back(extractSpice(knapText));
+            }else if (knapText.find("knapsack capacity") != std::string::npos) {
+                knapText = knapText.substr(19, knapText.length() - 1);
+                knapsackCapacities.push_back(atoi(knapText.c_str()));
+            }
+        }
+    }
+    spice.close();
+    //end reading the spice file
+
+    //sort vector
+    sort(spices.begin(), spices.end(), compareSpice);
+
+    //knapsack
+    for (size_t i = 0; i < knapsackCapacities.size(); i++)
+    {
+        KnapSack knapSack(knapsackCapacities[i], spices);
+        float values = knapSack.execute();
+        vector<Spice> results = knapSack.getResults();
+
+        cout << "Knapsack of capacity " << knapsackCapacities[i] << " is worth " << values
+             << " quatloos";
+
+        if (results.size() > 0)
+        {
+            cout << " and contains ";
+            for (size_t j = 0; j < results.size(); j++) {
+                if (j > 0) {
+                    cout << ", ";
+                }
+                cout << results[j].getQuantity() << " scoops of " << results[j].getName();
+            }
+        }
+
+
+        cout << endl;
     }
 
     while (graphFile.is_open()) {
@@ -176,7 +248,7 @@ int main() {
         //cout << endl << endl;
 
         //adjacency List
-        GNode** nodeList = new GNode*[numVertices];
+        GNode** nodeList = new GNode * [numVertices];
         for (int i = 0; i < numVertices; i++) {
             nodeList[i] = new GNode();
             nodeList[i]->vertex = i;
@@ -222,7 +294,7 @@ int main() {
             GNode* toNode = nodeList[toVertex];
 
             //move to tail node of linked list fromNode
-            while (fromNode->next != NULL){
+            while (fromNode->next != NULL) {
                 fromNode = fromNode->next;
             }
             //then add a new node to tail
@@ -278,7 +350,7 @@ GNode[5] -> NULL
             GNode* temp;
 
             //iterate the linked list and delete node
-            while (current != NULL){
+            while (current != NULL) {
                 temp = current;
                 current = current->next;
                 delete temp;
@@ -311,34 +383,20 @@ GNode[5] -> NULL
             linkedObjectGraph[fromVertex].weights.push_back(w);
         }
 
-        pair<int,vector<int>>* shortest_paths = BellmanFord(linkedObjectGraph, numVertices);
+        pair<int, vector<int>>* shortest_paths = BellmanFord(linkedObjectGraph, numVertices);
 
-        for (int i = 1; i < numVertices; i++){
-            cout << "1 --> " << i+1 << " cost is " << setw(2) << shortest_paths[i].first << "; path: 1";
+        for (int i = 1; i < numVertices; i++) {
+            cout << "1 --> " << i + 1 << " cost is " << setw(2) << shortest_paths[i].first << "; path: 1";
             for (int j = 1; j < shortest_paths[i].second.size(); j++)
-                cout << " --> " << shortest_paths[i].second[j] + 1 ;
+                cout << " --> " << shortest_paths[i].second[j] + 1;
             cout << "\n";
         }
     }
 
-    while (spice.is_open()){
 
-        while (std::getline(spice, knapText)) {
-            vector<string> SpiceName;
-            vector<string> SpricePrice;
-
-            if (text == "") {
-                break;
-            }
-            if (text.find("Spice Name") != std::string::npos) {//"add edge"
-                SpiceName.push_back(knapText);
-            }
-            if (text.find("Total Price ") != std::string::npos) {//"add vertex"
-                SpricePrice.push_back(text);
-            }
-        }
-    }
-    spice.close();
     graphFile.close();
+
+
+
     return 0;
 }

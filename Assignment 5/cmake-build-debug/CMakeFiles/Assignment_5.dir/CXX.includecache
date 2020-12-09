@@ -6,25 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Graph.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Spice.cpp
+string
+-
+Spice.h
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Spice.h
 
-C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/main.cpp
-iostream
+C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Spice.h
+string
 -
-cstdlib
--
-fstream
--
-iostream
--
-sstream
--
-iomanip
--
-vector
--
-algorithm
--
-Graph.h
-C:/Users/aaron/Documents/GitHub/CMPT435Algorithms/Assignment 5/Graph.h
 

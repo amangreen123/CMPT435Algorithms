@@ -5,24 +5,24 @@
 #ifndef ASSIGNMENT_5_SPICE_H
 #define ASSIGNMENT_5_SPICE_H
 
-#endif //ASSIGNMENT_5_SPICE_H
+
 #include<string>
 using namespace std;
 
-class Spice{
+class Spice {
 
 private:
     string name;
-    int Value;
+    float value;
     int quantity;
-    Spice*  next;
 
 public:
     Spice();
-    Spice(string N, int Q, int V);
-    void setSpice(Spice* next);
+    Spice(string N, float V, int Q);
     string getName();
-    int getValue();
-    int getQuanity();
+    float getValue();
+    int getQuantity();
 
 };
+
+#endif //ASSIGNMENT_5_SPICE_H
