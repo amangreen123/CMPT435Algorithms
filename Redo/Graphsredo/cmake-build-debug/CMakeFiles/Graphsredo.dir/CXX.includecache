@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/aaron/CLionProjects/Graphsredo/main.cpp
+iostream
+-
+cstdlib
+-
+fstream
+-
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+
